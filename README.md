@@ -1,58 +1,58 @@
 # Kairo 88 Design System
 
-Kairo 88 é um design system para produtos digitais com estética japonesa dos anos 80: interfaces precisas, noturnas, editoriais e táteis, inspiradas por city pop, eletrônicos de consumo, arcades, sinalização urbana e telas CRT.
+Kairo 88 is a design system for digital products with a Japanese 80s aesthetic: precise, nocturnal, editorial, tactile interfaces inspired by city pop, consumer electronics, arcades, urban signage, and CRT displays.
 
-A proposta não é transformar cada app em nostalgia decorativa. O sistema deve ser utilitário primeiro, memorável depois: legibilidade alta, componentes previsíveis, tokens consistentes e detalhes visuais que dão assinatura sem atrapalhar o uso diário.
+The goal is not to turn every app into decorative nostalgia. The system should be useful first and memorable second: high readability, predictable components, consistent tokens, and visual details that create identity without getting in the way of daily use.
 
-## Ideia central
+## Core Idea
 
-**Produto moderno com alma de painel eletrônico japonês dos anos 80.**
+**A modern product with the soul of an 80s Japanese electronic panel.**
 
-O usuário deve sentir que está usando uma ferramenta confiável, rápida e bonita, com pequenas pistas de época: contraste de neon sobre noite urbana, linhas finas, grades rígidas, microtexturas, tipografia técnica, estados luminosos e uma paleta que mistura papel, tinta, vidro, metal e luz.
+Users should feel that they are using a reliable, fast, beautiful tool with subtle period cues: neon contrast over an urban night base, fine lines, rigid grids, microtextures, technical typography, luminous states, and a palette that mixes paper, ink, glass, metal, and light.
 
-## Princípios
+## Principles
 
-1. **Sinal antes de ornamento**
-   Toda cor, borda, sombra e animação precisa ajudar a leitura, hierarquia ou feedback.
+1. **Signal before ornament**
+   Every color, border, shadow, and animation should help readability, hierarchy, or feedback.
 
-2. **Grade como ritmo**
-   Layouts usam alinhamento forte, espaçamento previsível e densidade controlada. A referência é editorial e industrial, não "landing page decorativa".
+2. **Grid as rhythm**
+   Layouts use strong alignment, predictable spacing, and controlled density. The reference is editorial and industrial, not decorative landing-page composition.
 
-3. **Nostalgia com precisão**
-   A estética vem de materiais, luz, tipografia e proporção. Evite kanji decorativo, clichês turísticos ou elementos culturais sem função.
+3. **Nostalgia with precision**
+   The aesthetic comes from materials, light, typography, and proportion. Avoid decorative kanji, tourist cliches, or cultural elements without purpose.
 
-4. **Noite urbana, papel claro**
-   O sistema nasce com modo escuro expressivo e modo claro editorial. Ambos compartilham os mesmos tokens sem virar temas separados.
+4. **Urban night, clear paper**
+   The system starts with an expressive dark mode and an editorial light mode. Both share the same tokens instead of becoming separate systems.
 
-5. **Tátil, não pesado**
-   Componentes podem lembrar botões, displays, etiquetas e painéis, mas continuam leves, responsivos e acessíveis.
+5. **Tactile, not heavy**
+   Components may evoke buttons, displays, labels, and panels while staying lightweight, responsive, and accessible.
 
-6. **Uma biblioteca, muitos produtos**
-   A assinatura visual deve sobreviver em dashboards, ferramentas internas, sites, jogos, docs e apps mobile sem exigir redesign por projeto.
+6. **One library, many products**
+   The visual signature should survive dashboards, internal tools, websites, games, docs, and mobile apps without requiring a redesign per project.
 
-## Estrutura inicial
+## Project Structure
 
-- [.storybook](.storybook): configuração do Storybook para documentar e testar a biblioteca.
-- [docs/atomic-design.md](docs/atomic-design.md): organização por fundamentos, átomos, moléculas e organismos.
-- [docs/conceito.md](docs/conceito.md): conceito, linguagem visual, regras de aplicação e direção de componentes.
-- [docs/design-options.md](docs/design-options.md): presets visuais oficiais, incluindo `systems-84` vindo do portfolio ingrd.
-- [docs/icones.md](docs/icones.md): direção visual, tamanhos, nomes e regras de uso para ícones.
-- [docs/motion.md](docs/motion.md): princípios de animação, durações, easing e padrões reutilizáveis.
-- [docs/roadmap.md](docs/roadmap.md): caminho recomendado para transformar o conceito em uma biblioteca real.
-- [docs/storybook.md](docs/storybook.md): como usar o Storybook como bancada do design system.
-- [docs/testing.md](docs/testing.md): estratégia de testes para tokens, CSS, ícones, stories e build.
-- [tokens/kairo-88.tokens.json](tokens/kairo-88.tokens.json): tokens semânticos iniciais em JSON.
-- [tokens/kairo-88.themes.json](tokens/kairo-88.themes.json): temas semânticos usados para gerar CSS.
-- [src/contracts/kairo.js](src/contracts/kairo.js): contrato compartilhado de temas, ícones e ordenação do Storybook.
-- [src/styles/kairo.css](src/styles/kairo.css): entrypoint CSS público, organizado por Atomic Design.
-- [src/icons/kairo-icons.svg](src/icons/kairo-icons.svg): sprite SVG inicial com ícones funcionais.
-- [src/stories](src/stories): stories de conceito, tokens, componentes, ícones e motion.
-- [scripts/generate-css-tokens.js](scripts/generate-css-tokens.js): gera `src/styles/foundations/tokens.css`.
-- [examples/kairo-board.html](examples/kairo-board.html): vitrine estática do conceito com temas alternáveis.
+- [.storybook](.storybook): Storybook configuration for documenting and testing the library.
+- [docs/atomic-design.md](docs/atomic-design.md): organization by foundations, atoms, molecules, and organisms.
+- [docs/conceito.md](docs/conceito.md): concept, visual language, usage rules, and component direction.
+- [docs/design-options.md](docs/design-options.md): official visual presets, including `systems-84` from the ingrd portfolio.
+- [docs/icones.md](docs/icones.md): icon direction, sizes, names, and usage rules.
+- [docs/motion.md](docs/motion.md): animation principles, durations, easing, and reusable patterns.
+- [docs/roadmap.md](docs/roadmap.md): recommended path for turning the concept into a real library.
+- [docs/storybook.md](docs/storybook.md): how to use Storybook as the design system workbench.
+- [docs/testing.md](docs/testing.md): test strategy for tokens, CSS, icons, stories, and builds.
+- [tokens/kairo-88.tokens.json](tokens/kairo-88.tokens.json): initial semantic tokens in JSON.
+- [tokens/kairo-88.themes.json](tokens/kairo-88.themes.json): semantic themes used to generate CSS.
+- [src/contracts/kairo.js](src/contracts/kairo.js): shared contract for themes, icons, and Storybook ordering.
+- [src/styles/kairo.css](src/styles/kairo.css): public CSS entrypoint, organized with Atomic Design.
+- [src/icons/kairo-icons.svg](src/icons/kairo-icons.svg): initial SVG sprite with functional icons.
+- [src/stories](src/stories): stories for concept, tokens, components, icons, and motion.
+- [scripts/generate-css-tokens.js](scripts/generate-css-tokens.js): generates `src/styles/foundations/tokens.css`.
+- [examples/kairo-board.html](examples/kairo-board.html): static showcase of the concept with switchable themes.
 
 ## Storybook
 
-Instale as dependências e rode:
+Install dependencies and run:
 
 ```bash
 npm install
@@ -60,20 +60,20 @@ npm run build:tokens
 npm run storybook
 ```
 
-O Storybook sobe em `http://localhost:6006` e inclui um seletor de tema para `midnight`, `systems-84`, `daylight`, `arcade` e `paper`.
+Storybook runs at `http://localhost:6006` and includes a theme selector for `midnight`, `systems-84`, `daylight`, `arcade`, and `paper`.
 
-## Testes
+## Tests
 
 ```bash
 npm test
 npm run test:ci
 ```
 
-`npm test` valida tokens, CSS, ícones e stories com o test runner nativo do Node. `npm run test:ci` roda a suíte e também gera o build do Storybook.
+`npm test` validates tokens, CSS, icons, and stories with Node's native test runner. `npm run test:ci` runs the suite and also builds Storybook.
 
-## Uso previsto
+## Intended Usage
 
-Projetos consumidores devem importar os tokens CSS e usar atributos de tema no elemento raiz:
+Consumer projects should import the CSS tokens and set a theme attribute on the root element:
 
 ```html
 <html data-theme="kairo-midnight">
@@ -87,4 +87,4 @@ Projetos consumidores devem importar os tokens CSS e usar atributos de tema no e
 @import "@forge/kairo-88/styles";
 ```
 
-O pacote final deve expor tokens, CSS base e componentes por adaptadores, sem obrigar todos os projetos a usarem o mesmo framework.
+The final package should expose tokens, base CSS, and components through adapters without forcing every project to use the same framework.
