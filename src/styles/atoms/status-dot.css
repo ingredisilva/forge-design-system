@@ -1,0 +1,9 @@
+.k88-status-dot {
+  background: var(--k88-color-success);
+  border-radius: 999px;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--k88-color-success), transparent 78%);
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+}
+

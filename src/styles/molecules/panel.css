@@ -1,0 +1,34 @@
+.k88-panel {
+  background: var(--k88-color-surface);
+  border: 1px solid var(--k88-color-border);
+  border-radius: var(--k88-radius-md);
+  box-shadow: var(--k88-shadow-sm);
+  min-width: 0;
+}
+
+.k88-panel__header {
+  align-items: center;
+  border-bottom: 1px solid var(--k88-color-border);
+  display: flex;
+  gap: var(--k88-space-3);
+  justify-content: space-between;
+  min-height: 44px;
+  padding: 0 var(--k88-space-4);
+}
+
+.k88-panel__title {
+  align-items: center;
+  display: inline-flex;
+  gap: var(--k88-space-2);
+  font: 700 13px/1 var(--k88-font-display);
+}
+
+.k88-panel__meta {
+  color: var(--k88-color-text-muted);
+  font: 600 11px/1 var(--k88-font-mono);
+}
+
+.k88-panel__body {
+  padding: var(--k88-space-4);
+}
+

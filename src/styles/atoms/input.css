@@ -1,0 +1,28 @@
+.k88-input {
+  background: var(--k88-color-surface);
+  border: 1px solid var(--k88-color-border);
+  border-radius: var(--k88-radius-sm);
+  color: var(--k88-color-text);
+  font: 400 14px/1.4 var(--k88-font-ui);
+  min-height: 36px;
+  padding: 0 var(--k88-space-3);
+  transition:
+    border-color var(--k88-duration-fast) var(--k88-ease-standard),
+    box-shadow var(--k88-duration-fast) var(--k88-ease-standard);
+}
+
+.k88-input::placeholder {
+  color: var(--k88-color-text-muted);
+}
+
+.k88-input:focus {
+  border-color: var(--k88-color-primary);
+  box-shadow: var(--k88-glow-focus);
+  outline: none;
+}
+
+.k88-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+

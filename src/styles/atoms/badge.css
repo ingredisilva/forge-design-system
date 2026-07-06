@@ -1,0 +1,33 @@
+.k88-badge {
+  align-items: center;
+  border: 1px solid var(--k88-color-border);
+  border-radius: var(--k88-radius-xs);
+  color: var(--k88-color-text-muted);
+  display: inline-flex;
+  gap: 6px;
+  font: 700 11px/1 var(--k88-font-mono);
+  min-height: 22px;
+  padding: 5px 8px;
+  text-transform: uppercase;
+}
+
+.k88-badge[data-tone="info"] {
+  border-color: color-mix(in srgb, var(--k88-color-info), transparent 35%);
+  color: var(--k88-color-info);
+}
+
+.k88-badge[data-tone="success"] {
+  border-color: color-mix(in srgb, var(--k88-color-success), transparent 35%);
+  color: var(--k88-color-success);
+}
+
+.k88-badge[data-tone="warning"] {
+  border-color: color-mix(in srgb, var(--k88-color-warning), transparent 35%);
+  color: var(--k88-color-warning);
+}
+
+.k88-badge[data-tone="danger"] {
+  border-color: color-mix(in srgb, var(--k88-color-danger), transparent 35%);
+  color: var(--k88-color-danger);
+}
+

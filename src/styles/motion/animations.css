@@ -1,0 +1,105 @@
+.k88-animate-in {
+  animation: k88-enter var(--k88-duration-slow) var(--k88-ease-snap) both;
+}
+
+.k88-animate-pulse {
+  animation: k88-pulse var(--k88-duration-loop) var(--k88-ease-standard) infinite;
+}
+
+.k88-animate-spin {
+  animation: k88-spin var(--k88-duration-loop) linear infinite;
+}
+
+.k88-animate-flicker {
+  animation: k88-flicker var(--k88-duration-emphasis) steps(2, end) both;
+}
+
+.k88-animate-sweep {
+  overflow: hidden;
+  position: relative;
+}
+
+.k88-animate-sweep::after {
+  animation: k88-sweep var(--k88-duration-loop) var(--k88-ease-scan) infinite;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--k88-color-primary), transparent 62%), transparent);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-110%);
+}
+
+@keyframes k88-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes k88-pulse {
+  0%,
+  100% {
+    filter: brightness(1);
+    opacity: 1;
+  }
+
+  50% {
+    filter: brightness(1.35);
+    opacity: 0.72;
+  }
+}
+
+@keyframes k88-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes k88-flicker {
+  0% {
+    opacity: 0.35;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 0.55;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes k88-sweep {
+  to {
+    transform: translateX(110%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-delay: 0ms !important;
+    animation-duration: 1ms !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+
+  .k88-button:hover {
+    transform: none;
+  }
+
+  .k88-animate-sweep::after {
+    display: none;
+  }
+}
+

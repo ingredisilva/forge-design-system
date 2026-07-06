@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--k88-color-bg);
+  color: var(--k88-color-text);
+  font-family: var(--k88-font-ui);
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background: var(--k88-color-bg);
+  color: var(--k88-color-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--k88-color-primary);
+  outline-offset: 2px;
+  box-shadow: var(--k88-glow-focus);
+}
+
+::selection {
+  background: var(--k88-color-accent);
+  color: var(--k88-color-primary-text);
+}
+
+.k88-surface {
+  background: var(--k88-color-surface);
+  border: 1px solid var(--k88-color-border);
+  border-radius: var(--k88-radius-md);
+  box-shadow: var(--k88-shadow-sm);
+}
+

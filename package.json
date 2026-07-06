@@ -1,0 +1,26 @@
+{
+  "name": "@forge/kairo-88",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Kairo 88 design system: Japanese 80s product aesthetic for Forge projects.",
+  "scripts": {
+    "build:tokens": "node scripts/generate-css-tokens.js",
+    "prestorybook": "npm run build:tokens",
+    "storybook": "storybook dev -p 6006 --no-open --disable-telemetry --ci",
+    "prebuild-storybook": "npm run build:tokens",
+    "build-storybook": "storybook build --disable-telemetry",
+    "check:tokens": "node -e \"JSON.parse(require('node:fs').readFileSync('tokens/kairo-88.tokens.json','utf8')); console.log('tokens-json-ok')\"",
+    "pretest": "npm run build:tokens",
+    "test": "node --test \"tests/*.test.js\"",
+    "pretest:storybook": "npm run build:tokens",
+    "test:storybook": "storybook build --test --disable-telemetry",
+    "test:ci": "npm run test && npm run build-storybook"
+  },
+  "devDependencies": {
+    "@storybook/addon-docs": "^10.4.0",
+    "@storybook/web-components-vite": "^10.4.0",
+    "storybook": "^10.4.0",
+    "vite": "^7.0.0"
+  }
+}

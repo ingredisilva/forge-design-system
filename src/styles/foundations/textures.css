@@ -1,0 +1,47 @@
+.k88-technical-grid {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--k88-color-text), transparent 96%) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--k88-color-text), transparent 96%) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.k88-blueprint-grid {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--k88-color-info), transparent 90%) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--k88-color-info), transparent 90%) 1px, transparent 1px),
+    radial-gradient(circle, color-mix(in srgb, var(--k88-color-info), transparent 72%) 1px, transparent 1px);
+  background-position:
+    0 0,
+    0 0,
+    16px 16px;
+  background-size:
+    64px 64px,
+    64px 64px,
+    80px 80px;
+}
+
+.k88-scanline {
+  overflow: hidden;
+  position: relative;
+}
+
+.k88-scanline::after {
+  animation: k88-scanline-drift var(--k88-duration-loop) linear infinite;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    color-mix(in srgb, var(--k88-color-text), transparent 96%) 50%,
+    transparent 100%
+  );
+  background-size: 100% 4px;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+@keyframes k88-scanline-drift {
+  to {
+    background-position: 0 16px;
+  }
+}

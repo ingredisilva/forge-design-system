@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="kairo-midnight">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kairo 88 Board</title>
+    <link rel="stylesheet" href="../src/styles/kairo.css" />
+    <style>
+      body {
+        min-height: 100vh;
+      }
+
+      body::before {
+        background:
+          linear-gradient(rgb(255 255 255 / 3%) 1px, transparent 1px),
+          linear-gradient(90deg, rgb(255 255 255 / 2%) 1px, transparent 1px);
+        background-size: 100% 4px, 48px 48px;
+        content: "";
+        inset: 0;
+        opacity: 0.45;
+        pointer-events: none;
+        position: fixed;
+      }
+
+      .app {
+        display: grid;
+        grid-template-columns: 244px minmax(0, 1fr);
+        min-height: 100vh;
+      }
+
+      .rail {
+        background: color-mix(in srgb, var(--k88-color-surface), var(--k88-color-bg) 18%);
+        border-right: 1px solid var(--k88-color-border);
+        display: flex;
+        flex-direction: column;
+        gap: var(--k88-space-6);
+        padding: var(--k88-space-5);
+      }
+
+      .brand {
+        align-items: center;
+        display: flex;
+        gap: var(--k88-space-3);
+        min-height: 36px;
+      }
+
+      .brand-mark {
+        background:
+          linear-gradient(135deg, var(--k88-color-primary), var(--k88-color-accent));
+        border: 1px solid color-mix(in srgb, var(--k88-color-primary), white 28%);
+        border-radius: var(--k88-radius-sm);
+        box-shadow: var(--k88-glow-focus);
+        height: 32px;
+        position: relative;
+        width: 32px;
+      }
+
+      .brand-mark::after {
+        border: 1px solid rgb(255 255 255 / 72%);
+        content: "";
+        inset: 7px;
+        position: absolute;
+      }
+
+      .brand-title {
+        font: 700 15px/1.1 var(--k88-font-display);
+      }
+
+      .brand-subtitle {
+        color: var(--k88-color-text-muted);
+        font: 500 11px/1.3 var(--k88-font-mono);
+        margin-top: 2px;
+        text-transform: uppercase;
+      }
+
+      .nav {
+        display: grid;
+        gap: var(--k88-space-1);
+      }
+
+      .nav a {
+        align-items: center;
+        border: 1px solid transparent;
+        border-radius: var(--k88-radius-sm);
+        color: var(--k88-color-text-muted);
+        display: flex;
+        gap: var(--k88-space-2);
+        font: 600 13px/1 var(--k88-font-ui);
+        min-height: 34px;
+        padding: 0 var(--k88-space-3);
+        text-decoration: none;
+      }
+
+      .nav a[aria-current="page"] {
+        background: color-mix(in srgb, var(--k88-color-primary), transparent 88%);
+        border-color: color-mix(in srgb, var(--k88-color-primary), transparent 48%);
+        color: var(--k88-color-text);
+      }
+
+      .rail-footer {
+        border-top: 1px solid var(--k88-color-border);
+        color: var(--k88-color-text-muted);
+        font: 500 12px/1.5 var(--k88-font-mono);
+        margin-top: auto;
+        padding-top: var(--k88-space-4);
+      }
+
+      .main {
+        min-width: 0;
+        padding: var(--k88-space-6);
+      }
+
+      .topbar {
+        align-items: center;
+        display: flex;
+        gap: var(--k88-space-4);
+        justify-content: space-between;
+        margin-bottom: var(--k88-space-6);
+      }
+
+      .eyebrow {
+        color: var(--k88-color-primary);
+        font: 700 11px/1.2 var(--k88-font-mono);
+        letter-spacing: 0;
+        margin-bottom: var(--k88-space-2);
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font: 700 32px/1.05 var(--k88-font-display);
+        margin: 0;
+      }
+
+      .topbar p {
+        color: var(--k88-color-text-muted);
+        font: 400 14px/1.6 var(--k88-font-ui);
+        margin: var(--k88-space-2) 0 0;
+        max-width: 720px;
+      }
+
+      .theme-switcher {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--k88-space-2);
+        justify-content: flex-end;
+      }
+
+      .theme-switcher .k88-button {
+        min-height: 32px;
+        padding-inline: var(--k88-space-3);
+      }
+
+      .dashboard {
+        display: grid;
+        gap: var(--k88-space-4);
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+      }
+
+      .panel {
+        background: var(--k88-color-surface);
+        border: 1px solid var(--k88-color-border);
+        border-radius: var(--k88-radius-md);
+        box-shadow: var(--k88-shadow-sm);
+        min-width: 0;
+      }
+
+      .panel-header {
+        align-items: center;
+        border-bottom: 1px solid var(--k88-color-border);
+        display: flex;
+        gap: var(--k88-space-3);
+        justify-content: space-between;
+        min-height: 44px;
+        padding: 0 var(--k88-space-4);
+      }
+
+      .panel-title {
+        align-items: center;
+        display: inline-flex;
+        gap: var(--k88-space-2);
+        font: 700 13px/1 var(--k88-font-display);
+      }
+
+      .panel-meta {
+        color: var(--k88-color-text-muted);
+        font: 600 11px/1 var(--k88-font-mono);
+      }
+
+      .summary {
+        grid-column: span 4;
+        padding: var(--k88-space-4);
+      }
+
+      .metric-head {
+        align-items: center;
+        display: flex;
+        gap: var(--k88-space-3);
+        justify-content: space-between;
+      }
+
+      .metric-label {
+        color: var(--k88-color-text-muted);
+        font: 600 12px/1 var(--k88-font-mono);
+        text-transform: uppercase;
+      }
+
+      .metric-icon {
+        align-items: center;
+        border: 1px solid color-mix(in srgb, var(--k88-color-primary), transparent 52%);
+        border-radius: var(--k88-radius-sm);
+        color: var(--k88-color-primary);
+        display: inline-flex;
+        height: 34px;
+        justify-content: center;
+        width: 34px;
+      }
+
+      .metric-value {
+        font: 700 34px/1 var(--k88-font-display);
+        margin-top: var(--k88-space-3);
+      }
+
+      .metric-note {
+        color: var(--k88-color-text-muted);
+        font: 400 13px/1.5 var(--k88-font-ui);
+        margin-top: var(--k88-space-2);
+      }
+
+      .signal {
+        background:
+          linear-gradient(90deg, color-mix(in srgb, var(--k88-color-primary), transparent 82%), transparent),
+          var(--k88-color-surface);
+        grid-column: span 8;
+        overflow: hidden;
+      }
+
+      .signal-body {
+        display: grid;
+        gap: var(--k88-space-4);
+        grid-template-columns: minmax(0, 1fr) 180px;
+        padding: var(--k88-space-4);
+      }
+
+      .wave {
+        align-items: end;
+        display: grid;
+        gap: 6px;
+        grid-template-columns: repeat(24, 1fr);
+        height: 160px;
+      }
+
+      .wave span {
+        animation: k88-wave var(--k88-duration-loop) var(--k88-ease-scan) infinite alternate;
+        background: linear-gradient(180deg, var(--k88-color-primary), var(--k88-color-accent));
+        border-radius: var(--k88-radius-xs) var(--k88-radius-xs) 0 0;
+        min-height: 18px;
+        transform-origin: bottom;
+      }
+
+      .wave span:nth-child(2n) {
+        animation-delay: 120ms;
+      }
+
+      .wave span:nth-child(3n) {
+        animation-delay: 220ms;
+      }
+
+      .readout {
+        align-content: center;
+        border-left: 1px solid var(--k88-color-border);
+        display: grid;
+        gap: var(--k88-space-3);
+        padding-left: var(--k88-space-4);
+      }
+
+      .readout strong {
+        align-items: center;
+        display: inline-flex;
+        gap: var(--k88-space-2);
+        font: 700 28px/1 var(--k88-font-mono);
+      }
+
+      .readout span {
+        color: var(--k88-color-text-muted);
+        font: 500 12px/1.4 var(--k88-font-ui);
+      }
+
+      .queue {
+        grid-column: span 7;
+      }
+
+      .table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      .table th,
+      .table td {
+        border-bottom: 1px solid var(--k88-color-border);
+        font-size: 13px;
+        padding: var(--k88-space-3) var(--k88-space-4);
+        text-align: left;
+        white-space: nowrap;
+      }
+
+      .table th {
+        color: var(--k88-color-text-muted);
+        font: 700 11px/1 var(--k88-font-mono);
+        text-transform: uppercase;
+      }
+
+      .table tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .badge {
+        align-items: center;
+        border: 1px solid var(--k88-color-border);
+        border-radius: var(--k88-radius-xs);
+        display: inline-flex;
+        gap: 6px;
+        font: 700 11px/1 var(--k88-font-mono);
+        min-height: 22px;
+        padding: 5px 8px;
+        text-transform: uppercase;
+      }
+
+      .badge[data-tone="success"] {
+        border-color: color-mix(in srgb, var(--k88-color-success), transparent 35%);
+        color: var(--k88-color-success);
+      }
+
+      .badge[data-tone="warning"] {
+        border-color: color-mix(in srgb, var(--k88-color-warning), transparent 35%);
+        color: var(--k88-color-warning);
+      }
+
+      .badge[data-tone="danger"] {
+        border-color: color-mix(in srgb, var(--k88-color-danger), transparent 35%);
+        color: var(--k88-color-danger);
+      }
+
+      .controls {
+        grid-column: span 5;
+      }
+
+      .icon-kit {
+        grid-column: 1 / -1;
+      }
+
+      .icon-grid {
+        display: grid;
+        gap: var(--k88-space-3);
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        padding: var(--k88-space-4);
+      }
+
+      .icon-tile {
+        align-items: center;
+        background: color-mix(in srgb, var(--k88-color-surface-raised), transparent 18%);
+        border: 1px solid var(--k88-color-border);
+        border-radius: var(--k88-radius-sm);
+        color: var(--k88-color-text);
+        display: grid;
+        gap: var(--k88-space-2);
+        justify-items: center;
+        min-height: 86px;
+        padding: var(--k88-space-3);
+      }
+
+      .icon-tile span {
+        color: var(--k88-color-text-muted);
+        font: 700 11px/1 var(--k88-font-mono);
+        text-transform: uppercase;
+      }
+
+      .control-body {
+        display: grid;
+        gap: var(--k88-space-4);
+        padding: var(--k88-space-4);
+      }
+
+      .field {
+        display: grid;
+        gap: var(--k88-space-2);
+      }
+
+      .field label {
+        color: var(--k88-color-text-muted);
+        font: 700 11px/1 var(--k88-font-mono);
+        text-transform: uppercase;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--k88-space-2);
+      }
+
+      .palette {
+        display: grid;
+        gap: var(--k88-space-2);
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+
+      .swatch {
+        border: 1px solid var(--k88-color-border);
+        border-radius: var(--k88-radius-sm);
+        min-height: 48px;
+      }
+
+      .swatch:nth-child(1) {
+        background: var(--k88-color-primary);
+      }
+
+      .swatch:nth-child(2) {
+        background: var(--k88-color-accent);
+      }
+
+      .swatch:nth-child(3) {
+        background: var(--k88-color-success);
+      }
+
+      .swatch:nth-child(4) {
+        background: var(--k88-color-warning);
+      }
+
+      .swatch:nth-child(5) {
+        background: var(--k88-color-danger);
+      }
+
+      .swatch:nth-child(6) {
+        background: var(--k88-color-border-strong);
+      }
+
+      @keyframes k88-wave {
+        from {
+          filter: brightness(0.82);
+          transform: scaleY(0.72);
+        }
+
+        to {
+          filter: brightness(1.2);
+          transform: scaleY(1);
+        }
+      }
+
+      @media (max-width: 960px) {
+        .app {
+          grid-template-columns: 1fr;
+        }
+
+        .rail {
+          border-bottom: 1px solid var(--k88-color-border);
+          border-right: 0;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .theme-switcher {
+          justify-content: flex-start;
+        }
+
+        .summary,
+        .signal,
+        .queue,
+        .controls {
+          grid-column: 1 / -1;
+        }
+
+        .signal-body {
+          grid-template-columns: 1fr;
+        }
+
+        .readout {
+          border-left: 0;
+          border-top: 1px solid var(--k88-color-border);
+          padding-left: 0;
+          padding-top: var(--k88-space-4);
+        }
+
+        .table-wrap {
+          overflow-x: auto;
+        }
+
+        .icon-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <aside class="rail">
+        <div class="brand">
+          <div class="brand-mark k88-animate-flicker" aria-hidden="true"></div>
+          <div>
+            <div class="brand-title">Kairo 88</div>
+            <div class="brand-subtitle">Signal Library</div>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Seções">
+          <a href="#" aria-current="page">
+            <svg class="k88-icon" data-size="xs" aria-hidden="true">
+              <use href="../src/icons/kairo-icons.svg#k88-icon-dashboard"></use>
+            </svg>
+            Painel
+          </a>
+          <a href="#">
+            <svg class="k88-icon" data-size="xs" aria-hidden="true">
+              <use href="../src/icons/kairo-icons.svg#k88-icon-component"></use>
+            </svg>
+            Componentes
+          </a>
+          <a href="#">
+            <svg class="k88-icon" data-size="xs" aria-hidden="true">
+              <use href="../src/icons/kairo-icons.svg#k88-icon-tokens"></use>
+            </svg>
+            Tokens
+          </a>
+          <a href="#">
+            <svg class="k88-icon" data-size="xs" aria-hidden="true">
+              <use href="../src/icons/kairo-icons.svg#k88-icon-status"></use>
+            </svg>
+            Estados
+          </a>
+          <a href="#">
+            <svg class="k88-icon" data-size="xs" aria-hidden="true">
+              <use href="../src/icons/kairo-icons.svg#k88-icon-guidelines"></use>
+            </svg>
+            Guidelines
+          </a>
+        </nav>
+
+        <div class="rail-footer">
+          BUILD 00.88<br />
+          TOKYO LINE / SAO PAULO NODE
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <div class="eyebrow">Japanese 80s product system</div>
+            <h1>Painel de sinais</h1>
+            <p>
+              Uma amostra operacional do conceito: denso, legível, técnico e
+              iluminado o bastante para ter assinatura sem virar decoração.
+            </p>
+          </div>
+          <div class="theme-switcher" aria-label="Selecionar tema">
+            <button class="k88-button" type="button" data-set-theme="kairo-midnight">Midnight</button>
+            <button class="k88-button" type="button" data-set-theme="kairo-daylight" data-variant="secondary">Daylight</button>
+            <button class="k88-button" type="button" data-set-theme="kairo-arcade" data-variant="secondary">Arcade</button>
+            <button class="k88-button" type="button" data-set-theme="kairo-paper" data-variant="secondary">Paper</button>
+          </div>
+        </header>
+
+        <section class="dashboard" aria-label="Exemplo de produto">
+          <article class="panel summary k88-animate-in">
+            <div class="metric-head">
+              <div class="metric-label">Fluxo ativo</div>
+              <div class="metric-icon">
+                <svg class="k88-icon" data-size="sm" aria-hidden="true">
+                  <use href="../src/icons/kairo-icons.svg#k88-icon-sync"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-value">88.4%</div>
+            <div class="metric-note">Sincronização estável nas últimas 24 horas.</div>
+          </article>
+
+          <article class="panel summary k88-animate-in" style="animation-delay: 60ms">
+            <div class="metric-head">
+              <div class="metric-label">Latência</div>
+              <div class="metric-icon">
+                <svg class="k88-icon" data-size="sm" aria-hidden="true">
+                  <use href="../src/icons/kairo-icons.svg#k88-icon-spark"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-value">42ms</div>
+            <div class="metric-note">Resposta média abaixo do limite operacional.</div>
+          </article>
+
+          <article class="panel summary k88-animate-in" style="animation-delay: 120ms">
+            <div class="metric-head">
+              <div class="metric-label">Alertas</div>
+              <div class="metric-icon">
+                <svg class="k88-icon" data-size="sm" aria-hidden="true">
+                  <use href="../src/icons/kairo-icons.svg#k88-icon-alert"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="metric-value">03</div>
+            <div class="metric-note">Dois avisos e um item crítico aguardam revisão.</div>
+          </article>
+
+          <article class="panel signal k88-animate-in k88-animate-sweep" style="animation-delay: 180ms">
+            <div class="panel-header">
+              <div class="panel-title">
+                <svg class="k88-icon" data-size="xs" aria-hidden="true">
+                  <use href="../src/icons/kairo-icons.svg#k88-icon-status"></use>
+                </svg>
+                Leitura de pulso
+              </div>
+              <div class="panel-meta">LIVE / 14:08</div>
+            </div>
+            <div class="signal-body">
+              <div class="wave" aria-hidden="true">
+                <span style="height: 38%"></span>
+                <span style="height: 58%"></span>
+                <span style="height: 44%"></span>
+                <span style="height: 71%"></span>
+                <span style="height: 82%"></span>
+                <span style="height: 49%"></span>
+                <span style="height: 62%"></span>
+                <span style="height: 92%"></span>
+                <span style="height: 54%"></span>
+                <span style="height: 73%"></span>
+                <span style="height: 88%"></span>
+                <span style="height: 64%"></span>
+                <span style="height: 45%"></span>
+                <span style="height: 69%"></span>
+                <span style="height: 96%"></span>
+                <span style="height: 52%"></span>
+                <span style="height: 76%"></span>
+                <span style="height: 84%"></span>
+                <span style="height: 40%"></span>
+                <span style="height: 66%"></span>
+                <span style="height: 79%"></span>
+                <span style="height: 57%"></span>
+                <span style="height: 86%"></span>
+                <span style="height: 61%"></span>
+              </div>
+              <div class="readout">
+                <strong><span class="k88-status-dot k88-animate-pulse"></span>SYNC</strong>
+                <span>Estado primário com brilho sutil, borda presente e contraste alto.</span>
+                <span class="badge" data-tone="success">
+                  <svg class="k88-icon" data-size="xs" aria-hidden="true">
+                    <use href="../src/icons/kairo-icons.svg#k88-icon-check"></use>
+                  </svg>
+                  Online
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel controls k88-animate-in" style="animation-delay: 240ms">
+            <div class="panel-header">
+              <div class="panel-title">
+                <svg class="k88-icon" data-size="xs" aria-hidden="true">
+                  <use href="../src/icons/kairo-icons.svg#k88-icon-palette"></use>
+                </svg>
+                Controles
+              </div>
+              <div class="panel-meta">FORM</div>
+            </div>
+            <div class="control-body">
+              <div class="field">
+                <label for="route">Rota</label>
+                <input class="k88-input" id="route" value="SAO-08 / TOK-88" />
+              </div>
+              <div class="field">
+                <label>Paleta semântica</label>
+                <div class="palette" aria-hidden="true">
+                  <div class="swatch"></div>
+                  <div class="swatch"></div>
+                  <div class="swatch"></div>
+                  <div class="swatch"></div>
+                  <div class="swatch"></div>
+                  <div class="swatch"></div>
+                </div>
+              </div>
+              <div class="actions">
+                <button class="k88-button" type="button">
+                  <svg class="k88-icon" aria-hidden="true">
+                    <use href="../src/icons/kairo-icons.svg#k88-icon-play"></use>
+                  </svg>
+                  Executar
+                </button>
+                <button class="k88-button" type="button" data-variant="secondary">
+                  <svg class="k88-icon" aria-hidden="true">
+                    <use href="../src/icons/kairo-icons.svg#k88-icon-review"></use>
+                  </svg>
+                  Revisar
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel queue k88-animate-in" style="animation-delay: 300ms">
+            <div class="panel-header">
+              <div class="panel-title">
+                <svg class="k88-icon" data-size="xs" aria-hidden="true">
+                  <use href="../src/icons/kairo-icons.svg#k88-icon-tokens"></use>
+                </svg>
+                Fila de eventos
+              </div>
+              <div class="panel-meta">QUEUE / 06</div>
+            </div>
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Canal</th>
+                    <th>Status</th>
+                    <th>Tempo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Exportar pacote</td>
+                    <td>Design</td>
+                    <td>
+                      <span class="badge" data-tone="success">
+                        <svg class="k88-icon" data-size="xs" aria-hidden="true">
+                          <use href="../src/icons/kairo-icons.svg#k88-icon-check"></use>
+                        </svg>
+                        Pronto
+                      </span>
+                    </td>
+                    <td>00:12</td>
+                  </tr>
+                  <tr>
+                    <td>Validar contraste</td>
+                    <td>Tokens</td>
+                    <td>
+                      <span class="badge" data-tone="warning">
+                        <svg class="k88-icon" data-size="xs" aria-hidden="true">
+                          <use href="../src/icons/kairo-icons.svg#k88-icon-alert"></use>
+                        </svg>
+                        Atenção
+                      </span>
+                    </td>
+                    <td>01:44</td>
+                  </tr>
+                  <tr>
+                    <td>Revisar estados</td>
+                    <td>Componentes</td>
+                    <td>
+                      <span class="badge" data-tone="danger">
+                        <svg class="k88-icon" data-size="xs" aria-hidden="true">
+                          <use href="../src/icons/kairo-icons.svg#k88-icon-alert"></use>
+                        </svg>
+                        Crítico
+                      </span>
+                    </td>
+                    <td>03:20</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel icon-kit k88-animate-in" style="animation-delay: 360ms">
+            <div class="panel-header">
+              <div class="panel-title">
+                <svg class="k88-icon" data-size="xs" aria-hidden="true">
+                  <use href="../src/icons/kairo-icons.svg#k88-icon-spark"></use>
+                </svg>
+                Ícones e movimento
+              </div>
+              <div class="panel-meta">SPRITE / MOTION</div>
+            </div>
+            <div class="icon-grid">
+              <div class="icon-tile">
+                <svg class="k88-icon" aria-hidden="true">
+                  <use href="../src/icons/kairo-icons.svg#k88-icon-dashboard"></use>
+                </svg>
+                <span>Dashboard</span>
+              </div>
+              <div class="icon-tile">
+                <svg class="k88-icon" aria-hidden="true">
+                  <use href="../src/icons/kairo-icons.svg#k88-icon-component"></use>
+                </svg>
+                <span>Component</span>
+              </div>
+              <div class="icon-tile">
+                <svg class="k88-icon k88-animate-spin" aria-hidden="true">
+                  <use href="../src/icons/kairo-icons.svg#k88-icon-sync"></use>
+                </svg>
+                <span>Sync</span>
+              </div>
+              <div class="icon-tile">
+                <svg class="k88-icon k88-animate-flicker" aria-hidden="true">
+                  <use href="../src/icons/kairo-icons.svg#k88-icon-spark"></use>
+                </svg>
+                <span>Flicker</span>
+              </div>
+              <div class="icon-tile">
+                <svg class="k88-icon" aria-hidden="true">
+                  <use href="../src/icons/kairo-icons.svg#k88-icon-palette"></use>
+                </svg>
+                <span>Palette</span>
+              </div>
+              <div class="icon-tile k88-animate-sweep">
+                <svg class="k88-icon" aria-hidden="true">
+                  <use href="../src/icons/kairo-icons.svg#k88-icon-status"></use>
+                </svg>
+                <span>Sweep</span>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const root = document.documentElement;
+      const buttons = document.querySelectorAll("[data-set-theme]");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          root.dataset.theme = button.dataset.setTheme;
+          buttons.forEach((item) => {
+            item.dataset.variant = item === button ? "" : "secondary";
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

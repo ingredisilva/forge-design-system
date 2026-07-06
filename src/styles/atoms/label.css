@@ -1,0 +1,21 @@
+.k88-system-label {
+  align-items: center;
+  background: color-mix(in srgb, var(--k88-color-warning), transparent 90%);
+  border: 1px solid color-mix(in srgb, var(--k88-color-warning), transparent 55%);
+  border-radius: var(--k88-radius-xs);
+  color: var(--k88-color-warning);
+  display: inline-flex;
+  font: 700 11px/1 var(--k88-font-mono);
+  gap: 6px;
+  min-height: 26px;
+  padding: 0 var(--k88-space-3);
+  text-transform: uppercase;
+}
+
+.k88-system-label::before {
+  content: "[";
+}
+
+.k88-system-label::after {
+  content: "]";
+}
