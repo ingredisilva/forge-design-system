@@ -38,6 +38,7 @@ Users should feel that they are using a reliable, fast, beautiful tool with subt
 - [docs/design-options.md](docs/design-options.md): official visual presets, including `systems-84` from the ingrd portfolio.
 - [docs/icones.md](docs/icones.md): icon direction, sizes, names, and usage rules.
 - [docs/motion.md](docs/motion.md): animation principles, durations, easing, and reusable patterns.
+- [docs/publishing.md](docs/publishing.md): production publishing checklist for npm, releases, and Storybook Pages.
 - [docs/roadmap.md](docs/roadmap.md): recommended path for turning the concept into a real library.
 - [docs/storybook.md](docs/storybook.md): how to use Storybook as the design system workbench.
 - [docs/testing.md](docs/testing.md): test strategy for tokens, CSS, icons, stories, and builds.
@@ -84,7 +85,26 @@ Consumer projects should import the CSS tokens and set a theme attribute on the 
 ```
 
 ```css
-@import "@forge/kairo-88/styles";
+@import "@ingredisilva/kairo-88/styles";
 ```
 
 The final package should expose tokens, base CSS, and components through adapters without forcing every project to use the same framework.
+
+## Publishing
+
+This package is prepared for public npm publishing as `@ingredisilva/kairo-88`.
+
+Before publishing a release:
+
+```bash
+npm run test:ci
+npm run pack:dry-run
+```
+
+The first release should be published manually with an npm account that has 2FA enabled:
+
+```bash
+npm publish --access public
+```
+
+After the first release, use the tag-based GitHub Actions release workflow with npm Trusted Publishing.

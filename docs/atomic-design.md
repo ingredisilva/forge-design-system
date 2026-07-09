@@ -69,7 +69,7 @@ Ainda não existem como pacote. Quando entrarem, devem ficar em examples ou apps
 O entrypoint público continua sendo:
 
 ```css
-@import "@forge/kairo-88/styles";
+@import "@ingredisilva/kairo-88/styles";
 ```
 
 Internamente, ele importa:
@@ -105,4 +105,3 @@ Um componente sobe de camada quando ganha responsabilidade:
 - se resolve uma seção ou fluxo, é organismo.
 
 Se a peça precisa conhecer dados de app, rota, permissão ou chamada de API, ela não pertence ao núcleo do design system.
-

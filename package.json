@@ -1,10 +1,57 @@
 {
-  "name": "@forge/kairo-88",
+  "name": "@ingredisilva/kairo-88",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
   "description": "Kairo 88 design system: Japanese 80s product aesthetic for Forge projects.",
+  "license": "MIT",
+  "author": "Ingredi Silva <ingredisilva@dev@gmail.com>",
+  "homepage": "https://github.com/ingredisilva/forge-design-system#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ingredisilva/forge-design-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ingredisilva/forge-design-system/issues"
+  },
+  "keywords": [
+    "design-system",
+    "css",
+    "tokens",
+    "storybook",
+    "japanese-80s",
+    "ui"
+  ],
+  "style": "./src/styles/kairo.css",
+  "exports": {
+    ".": "./src/contracts/kairo.js",
+    "./contract": "./src/contracts/kairo.js",
+    "./styles": "./src/styles/kairo.css",
+    "./icons": "./src/icons/kairo-icons.svg",
+    "./tokens": "./tokens/kairo-88.tokens.json",
+    "./themes": "./tokens/kairo-88.themes.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src/contracts",
+    "src/icons",
+    "src/styles",
+    "tokens",
+    "docs",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
+    "build": "npm run build:tokens",
     "build:tokens": "node scripts/generate-css-tokens.js",
     "prestorybook": "npm run build:tokens",
     "storybook": "storybook dev -p 6006 --no-open --disable-telemetry --ci",
@@ -15,7 +62,11 @@
     "test": "node --test \"tests/*.test.js\"",
     "pretest:storybook": "npm run build:tokens",
     "test:storybook": "storybook build --test --disable-telemetry",
-    "test:ci": "npm run test && npm run build-storybook"
+    "test:ci": "npm run test && npm run build-storybook",
+    "pack:dry-run": "npm pack --dry-run",
+    "publish:dry-run": "npm publish --dry-run --access public",
+    "prepack": "npm run build:tokens",
+    "prepublishOnly": "npm run test:ci"
   },
   "devDependencies": {
     "@storybook/addon-docs": "^10.4.0",
