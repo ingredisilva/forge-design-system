@@ -92,7 +92,11 @@ The final package should expose tokens, base CSS, and components through adapter
 
 ## Publishing
 
-This package is prepared for public npm publishing as `@alloysforge/kairo-88`.
+This package is published on npm as `@alloysforge/kairo-88`:
+
+```bash
+npm install @alloysforge/kairo-88
+```
 
 Before publishing a release:
 
@@ -101,10 +105,4 @@ npm run test:ci
 npm run pack:dry-run
 ```
 
-The first release should be published manually with an npm account that has 2FA enabled:
-
-```bash
-npm publish --access public
-```
-
-After the first release, use the tag-based GitHub Actions release workflow with npm Trusted Publishing.
+Version `0.1.0` was published manually. Future releases should use the tag-based GitHub Actions release workflow with npm Trusted Publishing.

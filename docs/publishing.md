@@ -7,6 +7,7 @@ This document is the release checklist for publishing Kairo 88 as `@alloysforge/
 - Registry: npm public registry.
 - Package name: `@alloysforge/kairo-88`.
 - Visibility: public.
+- Current npm version: `0.1.0`.
 - Release model: semantic versioning with Git tags.
 - Documentation: Storybook deployed to GitHub Pages.
 
@@ -32,9 +33,11 @@ The package tarball should only contain:
 - `README.md`
 - `package.json`
 
-## First Manual Publish
+## Initial Manual Publish
 
-The first publish needs an npm account with 2FA enabled.
+Version `0.1.0` has already been published manually.
+
+For a brand-new package, the first publish needs an npm account with 2FA enabled:
 
 ```bash
 npm login
@@ -44,7 +47,7 @@ npm run pack:dry-run
 npm publish --access public
 ```
 
-After the first publish, verify:
+Verify the published package:
 
 ```bash
 npm view @alloysforge/kairo-88 version
@@ -73,6 +76,8 @@ For a patch release:
 npm version patch
 git push origin master --follow-tags
 ```
+
+Because `0.1.0` already exists on npm, do not trigger the release workflow with `v0.1.0`. The next automated release should bump to `0.1.1` or later.
 
 For minor or major releases:
 
