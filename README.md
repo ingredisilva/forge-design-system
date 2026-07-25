@@ -74,6 +74,12 @@ npm run test:ci
 
 ## Intended Usage
 
+Install the package:
+
+```bash
+npm install @alloysforge/kairo-88
+```
+
 Consumer projects should import the CSS tokens and set a theme attribute on the root element:
 
 ```html
@@ -89,20 +95,3 @@ Consumer projects should import the CSS tokens and set a theme attribute on the 
 ```
 
 The final package should expose tokens, base CSS, and components through adapters without forcing every project to use the same framework.
-
-## Publishing
-
-This package is published on npm as `@alloysforge/kairo-88`:
-
-```bash
-npm install @alloysforge/kairo-88
-```
-
-Before publishing a release:
-
-```bash
-npm run test:ci
-npm run pack:dry-run
-```
-
-Version `0.1.0` was published manually. Future releases should use the tag-based GitHub Actions release workflow with npm Trusted Publishing.
