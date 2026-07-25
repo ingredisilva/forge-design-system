@@ -63,8 +63,9 @@ After the package exists on npm:
 3. Enable Trusted Publishing.
 4. Choose GitHub Actions.
 5. Use repository `ingredisilva/forge-design-system`.
-6. Use workflow `.github/workflows/release.yml`.
-7. Keep the workflow trigger on tags matching `v*`.
+6. Use workflow filename `release.yml`.
+7. Leave Environment name empty.
+8. Keep the workflow trigger on tags matching `v*`.
 
 The release workflow already requests `id-token: write`, which is required for OIDC-based publishing.
 
