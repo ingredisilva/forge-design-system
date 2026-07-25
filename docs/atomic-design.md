@@ -1,78 +1,78 @@
 # Atomic Design
 
-Kairo 88 usa Atomic Design como arquitetura de composição. A ideia não é criar pastas bonitas: é limitar responsabilidade, reduzir acoplamento e deixar claro onde cada decisão deve morar.
+Kairo 88 uses Atomic Design as its composition architecture. The point is not to create pretty folders; it is to limit responsibility, reduce coupling, and make it clear where each decision belongs.
 
-## Camadas
+## Layers
 
-### Fundamentos
+### Foundations
 
-Base do sistema:
+The base of the system:
 
 - tokens;
-- temas;
+- themes;
 - reset/base;
-- tipografia;
-- espaçamento;
+- typography;
+- spacing;
 - radius;
 - motion;
-- contrato de ícones.
+- icon contract.
 
-Arquivos principais:
+Main files:
 
 - `tokens/kairo-88.tokens.json`;
 - `tokens/kairo-88.themes.json`;
 - `src/styles/foundations`;
 - `src/contracts/kairo.js`.
 
-### Átomos
+### Atoms
 
-Menores blocos reutilizáveis com comportamento visual próprio:
+The smallest reusable blocks with their own visual behavior:
 
-- botão;
-- ícone;
+- button;
+- icon;
 - icon button;
 - status dot;
 - badge;
 - field;
 - input.
 
-Átomos não devem conhecer moléculas ou organismos.
+Atoms should not know about molecules or organisms.
 
-### Moléculas
+### Molecules
 
-Combinações pequenas de átomos que já representam uma unidade de interface:
+Small combinations of atoms that already represent an interface unit:
 
-- painel;
-- controles agrupados;
-- resumo com label + métrica + status.
+- panel;
+- grouped controls;
+- summary with label + metric + status.
 
-Moléculas podem conter átomos, mas não devem assumir layout de página.
+Molecules can contain atoms, but they should not assume page layout.
 
-### Organismos
+### Organisms
 
-Seções ou componentes compostos para fluxos reais:
+Sections or composed components for real workflows:
 
-- tabela;
+- table;
 - navigation rail;
 - top bar;
 - command palette;
-- modais e drawers.
+- modals and drawers.
 
-Organismos podem conter moléculas e átomos.
+Organisms can contain molecules and atoms.
 
-### Templates e Páginas
+### Templates and Pages
 
-Ainda não existem como pacote. Quando entrarem, devem ficar em examples ou apps consumidores, não no núcleo da biblioteca, a menos que sejam templates oficiais reutilizáveis.
+These do not exist as package exports yet. When they arrive, they should live in examples or consumer apps, not in the library core, unless they are official reusable templates.
 
 ## CSS
 
-O entrypoint público continua sendo:
+The public entrypoint remains:
 
 ```css
 @import "@alloysforge/kairo-88/styles";
 ```
 
-Internamente, ele importa:
+Internally, it imports:
 
 - `foundations/tokens.css`;
 - `foundations/base.css`;
@@ -81,9 +81,9 @@ Internamente, ele importa:
 - `organisms/*.css`;
 - `motion/*.css`.
 
-## Tokens gerados
+## Generated Tokens
 
-`src/styles/foundations/tokens.css` é gerado. Não edite manualmente.
+`src/styles/foundations/tokens.css` is generated. Do not edit it manually.
 
 Use:
 
@@ -91,17 +91,17 @@ Use:
 npm run build:tokens
 ```
 
-Fontes:
+Sources:
 
 - `tokens/kairo-88.tokens.json`;
 - `tokens/kairo-88.themes.json`.
 
-## Regra de promoção
+## Promotion Rule
 
-Um componente sobe de camada quando ganha responsabilidade:
+A component moves up a layer when it gains responsibility:
 
-- se é uma peça indivisível, é átomo;
-- se combina átomos em uma unidade pequena, é molécula;
-- se resolve uma seção ou fluxo, é organismo.
+- if it is an indivisible piece, it is an atom;
+- if it combines atoms into a small unit, it is a molecule;
+- if it solves a section or workflow, it is an organism.
 
-Se a peça precisa conhecer dados de app, rota, permissão ou chamada de API, ela não pertence ao núcleo do design system.
+If a piece needs to know about app data, routes, permissions, or API calls, it does not belong in the design system core.

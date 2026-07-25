@@ -1,26 +1,26 @@
 # Roadmap
 
-## Fase 0: Fundação
+## Phase 0: Foundation
 
-Objetivo: transformar o conceito em regras reutilizáveis.
+Goal: turn the concept into reusable rules.
 
-- consolidar tokens de cor, espaçamento, tipografia, radius, sombra e movimento;
-- definir temas `midnight`, `daylight`, `arcade` e `paper`;
-- organizar CSS e stories por Atomic Design;
-- gerar CSS de tema a partir dos tokens;
-- criar CSS variables consumíveis por qualquer app;
-- configurar Storybook como bancada de documentação;
-- documentar regras de acessibilidade e densidade.
+- consolidate color, spacing, typography, radius, shadow, and motion tokens;
+- define `midnight`, `daylight`, `arcade`, and `paper` themes;
+- organize CSS and stories with Atomic Design;
+- generate theme CSS from tokens;
+- create CSS variables consumable by any app;
+- configure Storybook as the documentation workbench;
+- document accessibility and density rules.
 
-## Fase 1: Primitivos
+## Phase 1: Primitives
 
-Objetivo: criar blocos básicos sem prender a um framework.
+Goal: create basic blocks without locking into a framework.
 
 - reset/base CSS;
-- tipografia;
-- sprite e contrato de ícones;
-- utilitários de motion;
-- botão;
+- typography;
+- icon sprite and contract;
+- motion utilities;
+- button;
 - input;
 - select;
 - checkbox;
@@ -31,9 +31,9 @@ Objetivo: criar blocos básicos sem prender a um framework.
 - tooltip;
 - spinner/progress.
 
-## Fase 2: Componentes de Produto
+## Phase 2: Product Components
 
-Objetivo: cobrir fluxos reais.
+Goal: cover real workflows.
 
 - navigation rail;
 - top bar;
@@ -50,37 +50,37 @@ Objetivo: cobrir fluxos reais.
 - date/time controls;
 - form layout.
 
-## Fase 3: Adapters
+## Phase 3: Adapters
 
-Objetivo: permitir uso em vários projetos.
+Goal: support usage across multiple projects.
 
-- pacote CSS puro;
-- pacote React;
-- pacote Vue, se necessário;
-- pacote de tokens JSON;
-- documentação com exemplos;
-- build do Storybook para documentação publicada;
-- templates de app.
+- pure CSS package;
+- React package;
+- Vue package, if needed;
+- JSON token package;
+- documentation with examples;
+- Storybook build for published documentation;
+- app templates.
 
-## Fase 4: Governança
+## Phase 4: Governance
 
-Objetivo: manter consistência entre projetos.
+Goal: maintain consistency across projects.
 
-- versionamento semântico;
+- semantic versioning;
 - changelog;
-- matriz de compatibilidade;
-- snapshots visuais;
-- checklist de contribuição;
-- regras para criação de novos componentes.
+- compatibility matrix;
+- visual snapshots;
+- contribution checklist;
+- rules for creating new components.
 
-## Critério de qualidade
+## Quality Criteria
 
-Um componente só entra na biblioteca quando tiver:
+A component only enters the library when it has:
 
-- tokens sem hard-code visual;
-- estados hover, active, focus, disabled e loading quando aplicável;
-- comportamento em tema escuro e claro;
-- documentação curta;
-- exemplos de uso;
-- validação de contraste;
-- dimensões estáveis em desktop e mobile.
+- tokens without visual hard-coding;
+- hover, active, focus, disabled, and loading states when applicable;
+- behavior in dark and light themes;
+- short documentation;
+- usage examples;
+- contrast validation;
+- stable dimensions on desktop and mobile.

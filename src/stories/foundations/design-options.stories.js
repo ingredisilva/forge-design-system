@@ -1,7 +1,7 @@
 import { badge, icon, renderStory, storyHeader } from "../shared/story-utils.js";
 
 export default {
-  title: "Kairo 88/Fundamentos/Opcoes de design",
+  title: "Kairo 88/Foundations/Design Options",
   tags: ["autodocs"]
 };
 
@@ -20,8 +20,8 @@ function designOption({ theme, label, title, lede, meta, primaryIcon }) {
         </div>
 
         <div class="sb-k88-row" style="margin-top: var(--k88-space-6)">
-          <button class="k88-button" type="button">${icon(primaryIcon, "sm")}Abrir painel</button>
-          <button class="k88-button" type="button" data-variant="secondary">${icon("review", "sm")}Revisar</button>
+          <button class="k88-button" type="button">${icon(primaryIcon, "sm")}Open panel</button>
+          <button class="k88-button" type="button" data-variant="secondary">${icon("review", "sm")}Review</button>
         </div>
       </div>
     </section>
@@ -32,17 +32,17 @@ export const Presets = {
   render: () =>
     renderStory(`
       ${storyHeader(
-        "Fundamentos",
-        "Opcoes de design",
-        "A biblioteca agora tem duas direcoes visuais: Kairo 88 como base Japanese 80s product system e Systems 84 como preset tecnico importado do portfolio ingrd."
+        "Foundations",
+        "Design Options",
+        "The library now has two visual directions: Kairo 88 as the Japanese 80s product system base and Systems 84 as the technical preset imported from the ingrd portfolio."
       )}
 
       <div class="sb-k88-grid" style="margin-top: var(--k88-space-8)">
         ${designOption({
           theme: "kairo-midnight",
           label: "KAIRO_88",
-          title: "Neon contido para produto",
-          lede: "Mais city pop, display eletronico e sinalizacao urbana. Ideal para apps com energia visual, dashboards e ferramentas criativas.",
+          title: "Contained neon for product UI",
+          lede: "More city pop, electronic display, and urban signage. Ideal for apps with visual energy, dashboards, and creative tools.",
           meta: "SIGNAL",
           primaryIcon: "spark"
         })}
@@ -50,8 +50,8 @@ export const Presets = {
         ${designOption({
           theme: "systems-84",
           label: "SYSTEMS_84",
-          title: "Lab tecnico e terminal",
-          lede: "Fundo quase preto, paineis duros, grid de blueprint, verde industrial, amber de alerta e microcopy mono.",
+          title: "Technical lab and terminal",
+          lede: "Almost-black background, rigid panels, blueprint grid, industrial green, amber alerts, and mono microcopy.",
           meta: "SYS_READY",
           primaryIcon: "terminal"
         })}

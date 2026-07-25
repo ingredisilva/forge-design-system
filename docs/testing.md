@@ -1,8 +1,8 @@
-# Testes
+# Testing
 
-Kairo 88 deve ser mantido como produto de infraestrutura. Qualquer mudança em token, CSS, ícone ou story precisa falhar rápido quando quebra contrato visual ou documentação.
+Kairo 88 should be maintained as infrastructure. Any token, CSS, icon, or story change should fail fast when it breaks the visual contract or documentation.
 
-## Comandos
+## Commands
 
 ```bash
 npm test
@@ -10,57 +10,57 @@ npm run test:storybook
 npm run test:ci
 ```
 
-Os scripts de teste rodam `npm run build:tokens` antes da suíte para garantir que o CSS gerado reflita os tokens.
+The test scripts run `npm run build:tokens` before the suite to ensure generated CSS reflects the token sources.
 
-## O que `npm test` cobre
+## What `npm test` Covers
 
 ### Tokens
 
-- grupos fundamentais existem;
-- referências como `{color.accent.neonCyan}` resolvem;
-- cores usam hex ou referência válida;
-- dimensões usam `px`;
-- radius respeita o limite de 8px;
-- motion permanece curto e intencional.
+- foundation groups exist;
+- references such as `{color.accent.neonCyan}` resolve;
+- colors use hex values or valid references;
+- dimensions use `px`;
+- radius respects the 8px limit;
+- motion remains short and intentional.
 
 ### CSS
 
-- todos os temas expõem as variáveis semânticas de cor;
-- o bundle CSS é lido resolvendo os imports por Atomic Design;
-- `src/styles/foundations/tokens.css` está sincronizado com os arquivos de tokens;
-- pares principais de contraste passam AA;
-- classes base de componentes existem;
-- classes de motion existem;
-- `prefers-reduced-motion` está presente;
-- base CSS evita letter spacing negativo e tipo escalado por viewport.
+- all themes expose the semantic color variables;
+- the CSS bundle is read by resolving imports through Atomic Design;
+- `src/styles/foundations/tokens.css` is synchronized with token files;
+- primary contrast pairs pass AA;
+- base component classes exist;
+- motion classes exist;
+- `prefers-reduced-motion` is present;
+- base CSS avoids negative letter spacing and viewport-scaled type.
 
-### Ícones
+### Icons
 
-- o sprite tem os mesmos nomes expostos em `story-utils`;
-- todos usam `viewBox="0 0 24 24"`;
-- todos herdam cor com `currentColor`;
-- referências diretas em docs, examples e stories apontam para símbolos existentes.
+- the sprite has the same names exposed in `story-utils`;
+- all icons use `viewBox="0 0 24 24"`;
+- all icons inherit color with `currentColor`;
+- direct references in docs, examples, and stories point to existing symbols.
 
 ### Stories
 
-- arquivos JavaScript passam syntax check;
-- preview expõe todos os temas;
-- as áreas principais do Storybook continuam cobertas: fundamentos, átomos, moléculas, organismos e motion.
+- JavaScript files pass syntax checks;
+- preview exposes all themes;
+- the main Storybook areas remain covered: foundations, atoms, molecules, organisms, and motion.
 
-## O que `test:storybook` cobre
+## What `test:storybook` Covers
 
-`test:storybook` executa o build de teste do Storybook. Use quando quiser validar a integração entre stories, Vite, CSS global, addon docs e assets estáticos.
+`test:storybook` runs the Storybook test build. Use it when you want to validate the integration between stories, Vite, global CSS, addon docs, and static assets.
 
-## O que `test:ci` cobre
+## What `test:ci` Covers
 
-`test:ci` roda a suíte unitária e depois o build completo do Storybook. Esse deve ser o comando padrão para CI.
+`test:ci` runs the unit suite and then the full Storybook build. This should be the default command for CI.
 
-## Evolução
+## Evolution
 
-Quando a biblioteca ganhar componentes com comportamento, adicionar:
+When the library gains behavior-heavy components, add:
 
-- testes de interação;
-- snapshots visuais;
+- interaction tests;
+- visual snapshots;
 - axe/accessibility checks;
-- testes por adapter, como React ou Vue;
-- smoke tests de consumo em um app exemplo.
+- adapter tests, such as React or Vue;
+- consumer smoke tests in an example app.

@@ -1,18 +1,18 @@
 import { badge, panel, renderStory, storyHeader } from "../shared/story-utils.js";
 
 export default {
-  title: "Kairo 88/Organismos/Tabela",
+  title: "Kairo 88/Organisms/Table",
   tags: ["autodocs"]
 };
 
-export const FilaDeEventos = {
+export const EventQueue = {
   render: () =>
     renderStory(`
-      ${storyHeader("Organismo", "Tabela", "Tabelas são cidadãs de primeira classe para dashboards e ferramentas operacionais.")}
+      ${storyHeader("Organism", "Table", "Tables are first-class citizens for dashboards and operational tools.")}
 
       <div style="margin-top: var(--k88-space-8)">
         ${panel(
-          "Fila de eventos",
+          "Event queue",
           "QUEUE / 06",
           `
             <div style="overflow-x: auto">
@@ -20,28 +20,28 @@ export const FilaDeEventos = {
                 <thead>
                   <tr>
                     <th>Item</th>
-                    <th>Canal</th>
+                    <th>Channel</th>
                     <th>Status</th>
-                    <th>Tempo</th>
+                    <th>Time</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Exportar pacote</td>
+                    <td>Export package</td>
                     <td>Design</td>
-                    <td>${badge("success", "Pronto", "check")}</td>
+                    <td>${badge("success", "Ready", "check")}</td>
                     <td>00:12</td>
                   </tr>
                   <tr>
-                    <td>Validar contraste</td>
+                    <td>Validate contrast</td>
                     <td>Tokens</td>
-                    <td>${badge("warning", "Atenção", "alert")}</td>
+                    <td>${badge("warning", "Warning", "alert")}</td>
                     <td>01:44</td>
                   </tr>
                   <tr>
-                    <td>Revisar estados</td>
-                    <td>Componentes</td>
-                    <td>${badge("danger", "Crítico", "alert")}</td>
+                    <td>Review states</td>
+                    <td>Components</td>
+                    <td>${badge("danger", "Critical", "alert")}</td>
                     <td>03:20</td>
                   </tr>
                 </tbody>
@@ -53,4 +53,3 @@ export const FilaDeEventos = {
       </div>
     `)
 };
-

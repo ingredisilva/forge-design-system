@@ -34,9 +34,9 @@ Users should feel that they are using a reliable, fast, beautiful tool with subt
 
 - [.storybook](.storybook): Storybook configuration for documenting and testing the library.
 - [docs/atomic-design.md](docs/atomic-design.md): organization by foundations, atoms, molecules, and organisms.
-- [docs/conceito.md](docs/conceito.md): concept, visual language, usage rules, and component direction.
+- [docs/concept.md](docs/concept.md): concept, visual language, usage rules, and component direction.
 - [docs/design-options.md](docs/design-options.md): official visual presets, including `systems-84` from the ingrd portfolio.
-- [docs/icones.md](docs/icones.md): icon direction, sizes, names, and usage rules.
+- [docs/icons.md](docs/icons.md): icon direction, sizes, names, and usage rules.
 - [docs/motion.md](docs/motion.md): animation principles, durations, easing, and reusable patterns.
 - [docs/publishing.md](docs/publishing.md): production publishing checklist for npm, releases, and Storybook Pages.
 - [docs/roadmap.md](docs/roadmap.md): recommended path for turning the concept into a real library.

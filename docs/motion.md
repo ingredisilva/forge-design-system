@@ -1,72 +1,72 @@
-# Movimento
+# Motion
 
-## Direção
+## Direction
 
-O movimento de Kairo 88 deve parecer resposta eletrônica: rápido, preciso e luminoso. A referência é um display que acende, um botão físico que responde, uma linha de leitura passando por um painel. Nada deve parecer gelatinoso, teatral ou constantemente animado.
+Kairo 88 motion should feel like electronic response: fast, precise, and luminous. The reference is a display lighting up, a physical button responding, or a scan line moving across a panel. Nothing should feel rubbery, theatrical, or constantly animated.
 
-## Princípios
+## Principles
 
-1. **Feedback antes de espetáculo**
-   Movimento confirma causa e efeito: clique, foco, carregamento, seleção, sucesso, alerta.
+1. **Feedback before spectacle**
+   Motion confirms cause and effect: click, focus, loading, selection, success, alert.
 
-2. **Curto por padrão**
-   A maioria das transições fica entre `120ms` e `240ms`.
+2. **Short by default**
+   Most transitions stay between `120ms` and `240ms`.
 
-3. **Energia em momentos certos**
-   Animações mais expressivas aparecem em onboarding, empty states, demos e experiências visuais.
+3. **Energy in the right moments**
+   More expressive animation belongs in onboarding, empty states, demos, and visual experiences.
 
-4. **Sem ruído operacional**
-   Dashboards, tabelas e formulários não devem ter animações permanentes competindo com dados.
+4. **No operational noise**
+   Dashboards, tables, and forms should not have permanent animations competing with data.
 
-5. **Redução de movimento obrigatória**
-   Tudo que se move precisa degradar bem com `prefers-reduced-motion`.
+5. **Reduced motion is required**
+   Everything that moves must degrade well with `prefers-reduced-motion`.
 
 ## Tokens
 
-- `micro`: 90ms, resposta quase instantânea.
-- `fast`: 120ms, hover, press e foco.
-- `base`: 180ms, troca de estado comum.
-- `slow`: 240ms, entrada de painel e toast.
-- `emphasis`: 360ms, confirmação visual ou destaque especial.
-- `loop`: 1200ms, progresso contínuo discreto.
+- `micro`: 90ms, almost instant response.
+- `fast`: 120ms, hover, press, and focus.
+- `base`: 180ms, common state changes.
+- `slow`: 240ms, panel and toast entrance.
+- `emphasis`: 360ms, visual confirmation or special highlight.
+- `loop`: 1200ms, subtle continuous progress.
 
 Easing:
 
-- `standard`: transições comuns.
-- `snap`: press, pop e entrada curta.
-- `scan`: varredura linear, loading e leitura de sinal.
+- `standard`: common transitions.
+- `snap`: press, pop, and short entrance.
+- `scan`: linear sweep, loading, and signal reading.
 
-## Padrões
+## Patterns
 
 ### Press
 
-Botões e controles descem 1px ou reduzem escala para confirmar toque. A volta deve ser rápida.
+Buttons and controls move down 1px or reduce scale to confirm touch. The return should be quick.
 
-### Focus glow
+### Focus Glow
 
-Foco usa borda e halo. O brilho é funcional, não decoração.
+Focus uses border and halo. The glow is functional, not decoration.
 
 ### Boot
 
-Entrada de tela ou painel pode usar opacidade + deslocamento vertical pequeno. Use em blocos que aparecem após navegação, nunca em linhas de tabela em massa.
+Screen or panel entrance can use opacity plus a small vertical offset. Use it for blocks that appear after navigation, never for bulk table rows.
 
 ### Pulse
 
-Estados vivos, online ou monitorando podem pulsar com sombra leve. O pulso deve ser lento e opcional.
+Live, online, or monitoring states can pulse with a light shadow. The pulse should be slow and optional.
 
 ### Sweep
 
-Uma faixa luminosa atravessa uma superfície para indicar scan, atualização ou loading.
+A luminous band crosses a surface to indicate scanning, refresh, or loading.
 
 ### Flicker
 
-Confirmação curta, como LED acendendo. Deve acontecer uma vez, não em loop.
+Short confirmation, like an LED turning on. It should happen once, not loop.
 
 ### Spin
 
-Apenas para carregamento indeterminado. Use ícones simples.
+Only for indeterminate loading. Use simple icons.
 
-## Classes utilitárias
+## Utility Classes
 
 - `.k88-animate-in`
 - `.k88-animate-pulse`
@@ -74,12 +74,11 @@ Apenas para carregamento indeterminado. Use ícones simples.
 - `.k88-animate-spin`
 - `.k88-animate-flicker`
 
-Essas classes são a primeira base técnica. Componentes reais podem encapsular as mesmas animações com nomes semânticos.
+These classes are the first technical base. Real components can encapsulate the same animations with semantic names.
 
-## Quando não usar
+## When Not To Use Motion
 
-- Em listas longas com muitos itens simultâneos.
-- Em labels, dados financeiros ou métricas críticas.
-- Em alertas persistentes.
-- Em qualquer elemento que precise permanecer estável para leitura.
-
+- In long lists with many simultaneous items.
+- In labels, financial data, or critical metrics.
+- In persistent alerts.
+- In any element that must remain stable for reading.

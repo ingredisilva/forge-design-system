@@ -8,7 +8,7 @@ const storyFiles = walkFiles("src/stories", (file) => file.endsWith(".js"));
 const referenceFiles = [
   ...storyFiles,
   "examples/kairo-board.html",
-  "docs/icones.md",
+  "docs/icons.md",
   "README.md"
 ];
 
@@ -49,14 +49,14 @@ test("storybook stories cover the foundation areas", () => {
     .sort();
 
   assert.deepEqual(titles, [
-    "Kairo 88/Fundamentos/Introdução",
-    "Kairo 88/Fundamentos/Opcoes de design",
-    "Kairo 88/Fundamentos/Tokens",
-    "Kairo 88/Átomos/Botões",
-    "Kairo 88/Átomos/Formulários",
-    "Kairo 88/Átomos/Ícones",
-    "Kairo 88/Moléculas/Painel",
-    "Kairo 88/Organismos/Tabela",
-    "Kairo 88/Motion/Utilitários"
+    "Kairo 88/Foundations/Introduction",
+    "Kairo 88/Foundations/Design Options",
+    "Kairo 88/Foundations/Tokens",
+    "Kairo 88/Atoms/Buttons",
+    "Kairo 88/Atoms/Forms",
+    "Kairo 88/Atoms/Icons",
+    "Kairo 88/Molecules/Panel",
+    "Kairo 88/Organisms/Table",
+    "Kairo 88/Motion/Utilities"
   ].sort());
 });

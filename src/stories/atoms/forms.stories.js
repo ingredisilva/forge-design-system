@@ -1,22 +1,22 @@
 import { badge, panel, renderStory, storyHeader } from "../shared/story-utils.js";
 
 export default {
-  title: "Kairo 88/Átomos/Formulários",
+  title: "Kairo 88/Atoms/Forms",
   tags: ["autodocs"]
 };
 
-export const CamposEBadges = {
+export const FieldsAndBadges = {
   render: () =>
     renderStory(`
-      ${storyHeader("Átomo", "Campos e badges", "Campos têm borda sempre visível, label externo e foco luminoso. Badges combinam cor, ícone e texto.")}
+      ${storyHeader("Atom", "Fields and badges", "Fields always have visible borders, external labels, and luminous focus. Badges combine color, icon, and text.")}
 
       <div class="sb-k88-grid" style="margin-top: var(--k88-space-8)">
         ${panel(
-          "Rota",
+          "Route",
           "INPUT",
           `
             <div class="k88-field">
-              <label for="route">Rota</label>
+              <label for="route">Route</label>
               <input class="k88-input" id="route" value="SAO-08 / TOK-88" />
             </div>
           `,
@@ -28,9 +28,9 @@ export const CamposEBadges = {
           `
             <div class="sb-k88-row">
               ${badge("info", "Info", "status")}
-              ${badge("success", "Pronto", "check")}
-              ${badge("warning", "Atenção", "alert")}
-              ${badge("danger", "Crítico", "alert")}
+              ${badge("success", "Ready", "check")}
+              ${badge("warning", "Warning", "alert")}
+              ${badge("danger", "Critical", "alert")}
             </div>
           `,
           "status"
@@ -38,4 +38,3 @@ export const CamposEBadges = {
       </div>
     `)
 };
-

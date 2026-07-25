@@ -40,7 +40,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ["Kairo 88", ["Fundamentos", "Átomos", "Moléculas", "Organismos", "Motion"]]
+      order: ["Kairo 88", ["Foundations", "Atoms", "Molecules", "Organisms", "Motion"]]
     }
   }
 };

@@ -3,7 +3,7 @@ import themeConfig from "../../../tokens/kairo-88.themes.json";
 import { renderStory, storyHeader } from "../shared/story-utils.js";
 
 export default {
-  title: "Kairo 88/Fundamentos/Tokens",
+  title: "Kairo 88/Foundations/Tokens",
   tags: ["autodocs"]
 };
 
@@ -28,13 +28,13 @@ function colorCard(name, token) {
   `;
 }
 
-export const Cores = {
+export const Colors = {
   render: () =>
     renderStory(`
       ${storyHeader(
-        "Fundamentos",
-        "Cores",
-        "Bases, acentos, semântica e temas. O arquivo CSS de variáveis é gerado a partir dos tokens, para evitar divergência manual."
+        "Foundations",
+        "Colors",
+        "Base colors, accents, semantics, and themes. The CSS variable file is generated from tokens to avoid manual drift."
       )}
 
       <div class="sb-k88-stack" style="margin-top: var(--k88-space-8)">
@@ -56,13 +56,13 @@ export const Cores = {
     `)
 };
 
-export const Temas = {
+export const Themes = {
   render: () =>
     renderStory(`
       ${storyHeader(
-        "Fundamentos",
-        "Temas",
-        "Os temas mapeiam variáveis semânticas para contextos de uso: Kairo 88, Systems 84, claro editorial, arcade e paper."
+        "Foundations",
+        "Themes",
+        "Themes map semantic variables to usage contexts: Kairo 88, Systems 84, editorial light, arcade, and paper."
       )}
 
       <div class="sb-k88-grid" style="margin-top: var(--k88-space-8)">
@@ -83,13 +83,13 @@ export const Temas = {
     `)
 };
 
-export const Escalas = {
+export const Scales = {
   render: () =>
     renderStory(`
       ${storyHeader(
-        "Fundamentos",
-        "Escalas",
-        "Espaçamento, radius, tipografia, ícones e movimento formam a malha comum dos componentes."
+        "Foundations",
+        "Scales",
+        "Spacing, radius, typography, icons, and motion create the shared mesh for components."
       )}
 
       <div class="sb-k88-grid" style="margin-top: var(--k88-space-8)">

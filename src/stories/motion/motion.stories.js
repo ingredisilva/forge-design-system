@@ -1,14 +1,14 @@
 import { icon, renderStory, storyHeader } from "../shared/story-utils.js";
 
 export default {
-  title: "Kairo 88/Motion/Utilitários",
+  title: "Kairo 88/Motion/Utilities",
   tags: ["autodocs"]
 };
 
-export const Utilitarios = {
+export const Utilities = {
   render: () =>
     renderStory(`
-      ${storyHeader("Motion", "Animações", "Movimento curto e funcional: entrada, pulso, rotação, flicker e varredura. Todas as classes respeitam prefers-reduced-motion.")}
+      ${storyHeader("Motion", "Animations", "Short and functional motion: enter, pulse, spin, flicker, and sweep. Every class respects prefers-reduced-motion.")}
 
       <div class="sb-k88-grid" style="margin-top: var(--k88-space-8)">
         <div class="sb-k88-motion-demo k88-animate-in">
@@ -39,15 +39,15 @@ export const Utilitarios = {
     `)
 };
 
-export const Sinal = {
+export const Signal = {
   render: () =>
     renderStory(`
-      ${storyHeader("Motion", "Leitura de sinal", "Exemplo de painel vivo com pulso visual discreto para uso em experiências de monitoramento.")}
+      ${storyHeader("Motion", "Signal readout", "Example of a live panel with subtle visual pulse for monitoring experiences.")}
 
       <div style="margin-top: var(--k88-space-8)">
         <article class="k88-panel k88-animate-sweep">
           <div class="k88-panel__header">
-            <div class="k88-panel__title">${icon("status", "xs")}Leitura de pulso</div>
+            <div class="k88-panel__title">${icon("status", "xs")}Pulse readout</div>
             <div class="k88-panel__meta">LIVE / LOOP</div>
           </div>
           <div class="k88-panel__body">
@@ -70,4 +70,3 @@ export const Sinal = {
       </div>
     `)
 };
-

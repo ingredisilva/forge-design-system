@@ -1,13 +1,13 @@
 import { icon, renderStory, storyHeader } from "../shared/story-utils.js";
 
 export default {
-  title: "Kairo 88/Átomos/Botões",
+  title: "Kairo 88/Atoms/Buttons",
   tags: ["autodocs"]
 };
 
-export const Variantes = {
+export const Variants = {
   args: {
-    label: "Executar",
+    label: "Run",
     variant: "primary",
     disabled: false
   },
@@ -25,7 +25,7 @@ export const Variantes = {
     const disabledAttr = disabled ? " disabled" : "";
 
     return renderStory(`
-      ${storyHeader("Átomo", "Botões", "Controles compactos, com ícone quando a ação for operacional.")}
+      ${storyHeader("Atom", "Buttons", "Compact controls, with an icon when the action is operational.")}
 
       <div class="sb-k88-row" style="margin-top: var(--k88-space-8)">
         <button class="k88-button" type="button"${variantAttr}${disabledAttr}>
@@ -34,7 +34,7 @@ export const Variantes = {
         </button>
         <button class="k88-button" type="button" data-variant="secondary">
           ${icon("review", "sm")}
-          Revisar
+          Review
         </button>
         <button class="k88-button" type="button" data-variant="ghost">
           ${icon("spark", "sm")}
@@ -42,10 +42,9 @@ export const Variantes = {
         </button>
         <button class="k88-button" type="button" data-variant="danger">
           ${icon("alert", "sm")}
-          Remover
+          Remove
         </button>
       </div>
     `);
   }
 };
-
