@@ -69,7 +69,7 @@ Ainda não existem como pacote. Quando entrarem, devem ficar em examples ou apps
 O entrypoint público continua sendo:
 
 ```css
-@import "@ingredisilva/kairo-88/styles";
+@import "@alloysforge/kairo-88/styles";
 ```
 
 Internamente, ele importa:

@@ -1,11 +1,11 @@
 # Publishing
 
-This document is the release checklist for publishing Kairo 88 as `@ingredisilva/kairo-88`.
+This document is the release checklist for publishing Kairo 88 as `@alloysforge/kairo-88`.
 
 ## Package Target
 
 - Registry: npm public registry.
-- Package name: `@ingredisilva/kairo-88`.
+- Package name: `@alloysforge/kairo-88`.
 - Visibility: public.
 - Release model: semantic versioning with Git tags.
 - Documentation: Storybook deployed to GitHub Pages.
@@ -47,8 +47,8 @@ npm publish --access public
 After the first publish, verify:
 
 ```bash
-npm view @ingredisilva/kairo-88 version
-npm install @ingredisilva/kairo-88
+npm view @alloysforge/kairo-88 version
+npm install @alloysforge/kairo-88
 ```
 
 ## Trusted Publishing Setup

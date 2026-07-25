@@ -32,7 +32,7 @@ Tema:
 ```
 
 ```css
-@import "@ingredisilva/kairo-88/styles";
+@import "@alloysforge/kairo-88/styles";
 ```
 
 ## Primitivas visuais

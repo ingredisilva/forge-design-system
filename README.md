@@ -85,14 +85,14 @@ Consumer projects should import the CSS tokens and set a theme attribute on the 
 ```
 
 ```css
-@import "@ingredisilva/kairo-88/styles";
+@import "@alloysforge/kairo-88/styles";
 ```
 
 The final package should expose tokens, base CSS, and components through adapters without forcing every project to use the same framework.
 
 ## Publishing
 
-This package is prepared for public npm publishing as `@ingredisilva/kairo-88`.
+This package is prepared for public npm publishing as `@alloysforge/kairo-88`.
 
 Before publishing a release:
 
