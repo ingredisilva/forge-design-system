@@ -10,6 +10,15 @@ This project follows semantic versioning once published.
 
 - `cyberpunk-1984` theme with an original Japanese 80s analog intelligence and techno-thriller direction.
 - Intelligence grid, signal noise, and clearance label visual primitives.
+- Semantic `overlay`, `controlBorder`, `accentText`, and `dangerText` theme tokens.
+- Storybook background matrix and production usage guidance.
+- Forced-colors support for controls, focus indicators, and status labels.
+
+### Changed
+
+- Inputs now use a functional control boundary while legacy divider borders remain available.
+- Selection and danger buttons now use dedicated semantic text colors.
+- Scanline animation is removed when reduced motion is requested.
 
 ## [0.1.0] - 2026-07-09
 

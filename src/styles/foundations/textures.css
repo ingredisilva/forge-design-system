@@ -72,3 +72,10 @@
     background-position: 0 16px;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .k88-scanline::after {
+    animation: none;
+    display: none;
+  }
+}

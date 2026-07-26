@@ -47,6 +47,7 @@ test("storybook stories cover the foundation areas", () => {
 
   assert.deepEqual(titles, [
     "Kairo 88/Foundations/Introduction",
+    "Kairo 88/Foundations/Backgrounds",
     "Kairo 88/Foundations/Design Options",
     "Kairo 88/Foundations/Tokens",
     "Kairo 88/Atoms/Buttons",

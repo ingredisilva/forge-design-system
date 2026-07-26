@@ -34,6 +34,7 @@ Users should feel that they are using a reliable, fast, beautiful tool with subt
 
 - [.storybook](.storybook): Storybook configuration for documenting and testing the library.
 - [docs/atomic-design.md](docs/atomic-design.md): organization by foundations, atoms, molecules, and organisms.
+- [docs/backgrounds.md](docs/backgrounds.md): semantic background roles, texture rules, and accessibility requirements.
 - [docs/concept.md](docs/concept.md): concept, visual language, usage rules, and component direction.
 - [docs/design-options.md](docs/design-options.md): official visual presets, including `systems-84` and `cyberpunk-1984`.
 - [docs/icons.md](docs/icons.md): icon direction, sizes, names, and usage rules.

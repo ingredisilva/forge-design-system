@@ -39,7 +39,7 @@
 .k88-button[data-variant="danger"] {
   background: var(--k88-color-danger);
   border-color: color-mix(in srgb, var(--k88-color-danger), var(--k88-color-text) 18%);
-  color: #ffffff;
+  color: var(--k88-color-danger-text, #ffffff);
 }
 
 .k88-button:disabled {
