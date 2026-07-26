@@ -1,4 +1,4 @@
-import { icon, renderStory, storyHeader } from "../shared/story-utils.js";
+import { icon, renderStory, storyHeader } from "../shared/story-utils";
 
 export default {
   title: "Kairo 88/Motion/Utilities",

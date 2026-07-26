@@ -1,4 +1,4 @@
-import { badge, panel, renderStory, storyHeader } from "../shared/story-utils.js";
+import { badge, panel, renderStory, storyHeader } from "../shared/story-utils";
 
 export default {
   title: "Kairo 88/Organisms/Table",

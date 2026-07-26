@@ -1,5 +1,7 @@
-const config = {
-  stories: ["../src/**/*.stories.@(js|mdx)"],
+import type { StorybookConfig } from "@storybook/web-components-vite";
+
+const config: StorybookConfig = {
+  stories: ["../src/**/*.stories.@(ts|mdx)"],
   addons: ["@storybook/addon-docs"],
   framework: {
     name: "@storybook/web-components-vite",
@@ -10,10 +12,7 @@ const config = {
       from: "../src/icons",
       to: "/icons"
     }
-  ],
-  docs: {
-    autodocs: "tag"
-  }
+  ]
 };
 
 export default config;

@@ -1,6 +1,6 @@
 import tokens from "../../../tokens/kairo-88.tokens.json";
 import themeConfig from "../../../tokens/kairo-88.themes.json";
-import { renderStory, storyHeader } from "../shared/story-utils.js";
+import { renderStory, storyHeader } from "../shared/story-utils";
 
 export default {
   title: "Kairo 88/Foundations/Tokens",
@@ -11,13 +11,17 @@ const colorGroups = [
   ["Base", tokens.color.base],
   ["Accent", tokens.color.accent],
   ["Semantic", tokens.color.semantic]
-];
+] as const;
 
-function tokenValue(token) {
+type Token<T = string> = {
+  $value: T;
+};
+
+function tokenValue<T>(token: Token<T>): T {
   return token.$value;
 }
 
-function colorCard(name, token) {
+function colorCard(name: string, token: Token<string>): string {
   const value = tokenValue(token);
   return `
     <div class="sb-k88-token-card">

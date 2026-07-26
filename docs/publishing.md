@@ -23,7 +23,7 @@ npm run pack:dry-run
 
 The package tarball should only contain:
 
-- `src/contracts`
+- `dist/contracts`
 - `src/icons`
 - `src/styles`
 - `tokens`

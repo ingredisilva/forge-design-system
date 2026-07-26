@@ -1,11 +1,20 @@
-import { badge, icon, renderStory, storyHeader } from "../shared/story-utils.js";
+import { badge, icon, renderStory, storyHeader, type KairoIcon } from "../shared/story-utils";
 
 export default {
   title: "Kairo 88/Foundations/Design Options",
   tags: ["autodocs"]
 };
 
-function designOption({ theme, label, title, lede, meta, primaryIcon }) {
+type DesignOption = {
+  theme: string;
+  label: string;
+  title: string;
+  lede: string;
+  meta: string;
+  primaryIcon: KairoIcon;
+};
+
+function designOption({ theme, label, title, lede, meta, primaryIcon }: DesignOption): string {
   return `
     <section data-theme="${theme}" class="k88-panel k88-scanline" style="background: var(--k88-color-surface); overflow: hidden">
       <div class="k88-technical-grid" style="padding: var(--k88-space-5)">
@@ -34,7 +43,7 @@ export const Presets = {
       ${storyHeader(
         "Foundations",
         "Design Options",
-        "The library now has two visual directions: Kairo 88 as the Japanese 80s product system base and Systems 84 as the technical preset imported from the ingrd portfolio."
+        "The library has three visual directions: Kairo 88 as the Japanese 80s product base, Systems 84 as the technical ingrd preset, and Cyberpunk 1984 as an analog intelligence techno-thriller."
       )}
 
       <div class="sb-k88-grid" style="margin-top: var(--k88-space-8)">
@@ -55,6 +64,15 @@ export const Presets = {
           meta: "SYS_READY",
           primaryIcon: "terminal"
         })}
+
+        ${designOption({
+          theme: "cyberpunk-1984",
+          label: "CP_1984",
+          title: "Analog intelligence techno-thriller",
+          lede: "Phosphor olive, aged ivory, safety red, surveillance grids, classified metadata, and restrained signal interference.",
+          meta: "CLEARANCE_04",
+          primaryIcon: "system-map"
+        })}
       </div>
 
       <div class="k88-panel" data-theme="systems-84" style="margin-top: var(--k88-space-8); overflow: hidden">
@@ -72,6 +90,26 @@ export const Presets = {
             </div>
             <div class="k88-technical-grid" style="border: 1px solid var(--k88-color-border); min-height: 150px; padding: var(--k88-space-4)">
               <span class="k88-system-label">TECHNICAL GRID</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="k88-panel" data-theme="cyberpunk-1984" style="margin-top: var(--k88-space-4); overflow: hidden">
+        <div class="k88-panel__header">
+          <div class="k88-panel__title">${icon("terminal", "xs")}Cyberpunk 1984 primitives</div>
+          <div class="k88-panel__meta">ORIGINAL KAIRO INTERPRETATION</div>
+        </div>
+        <div class="k88-panel__body">
+          <div class="sb-k88-grid">
+            <div class="k88-intelligence-grid" style="border: 1px solid var(--k88-color-border); min-height: 150px; padding: var(--k88-space-4)">
+              <span class="k88-clearance-label">CLEARANCE 04</span>
+            </div>
+            <div class="k88-signal-noise" style="border: 1px solid var(--k88-color-border); min-height: 150px; padding: var(--k88-space-4)">
+              <span class="k88-system-label">SIGNAL TRACE</span>
+            </div>
+            <div class="k88-scanline" style="background: var(--k88-color-surface-raised); border: 1px solid var(--k88-color-border); min-height: 150px; padding: var(--k88-space-4)">
+              <span class="k88-system-label">ANALOG FEED</span>
             </div>
           </div>
         </div>

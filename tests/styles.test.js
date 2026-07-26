@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { themeValues } from "../src/contracts/kairo.js";
+import { themeValues } from "../dist/contracts/kairo.js";
 import { readCssBundle } from "./helpers.js";
 
 const css = readCssBundle("src/styles/kairo.css");
@@ -92,11 +92,14 @@ test("core component and motion classes exist", () => {
     ".k88-panel",
     ".k88-badge",
     ".k88-system-label",
+    ".k88-clearance-label",
     ".k88-field",
     ".k88-input",
     ".k88-table",
     ".k88-technical-grid",
     ".k88-blueprint-grid",
+    ".k88-intelligence-grid",
+    ".k88-signal-noise",
     ".k88-scanline",
     ".k88-animate-in",
     ".k88-animate-pulse",

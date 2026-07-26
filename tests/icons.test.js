@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { icons } from "../src/contracts/kairo.js";
+import { icons } from "../dist/contracts/kairo.js";
 import { extractIconIds, readText, unique } from "./helpers.js";
 
 const sprite = readText("src/icons/kairo-icons.svg");
@@ -27,7 +27,7 @@ test("every icon uses the standard 24px viewBox and inherited color", () => {
 test("all icon references point to existing sprite symbols", () => {
   const referenced = [
     ...extractIconIds(readText("src/icons/kairo-icons.svg")),
-    ...extractIconIds(readText("src/stories/shared/story-utils.js"))
+    ...extractIconIds(readText("src/stories/shared/story-utils.ts"))
   ];
 
   for (const name of referenced) {

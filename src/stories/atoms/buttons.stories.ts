@@ -1,4 +1,4 @@
-import { icon, renderStory, storyHeader } from "../shared/story-utils.js";
+import { icon, renderStory, storyHeader } from "../shared/story-utils";
 
 export default {
   title: "Kairo 88/Atoms/Buttons",
@@ -20,7 +20,7 @@ export const Variants = {
       control: "boolean"
     }
   },
-  render: ({ label, variant, disabled }) => {
+  render: ({ label, variant, disabled }: ButtonStoryArgs) => {
     const variantAttr = variant === "primary" ? "" : ` data-variant="${variant}"`;
     const disabledAttr = disabled ? " disabled" : "";
 
@@ -47,4 +47,10 @@ export const Variants = {
       </div>
     `);
   }
+};
+
+type ButtonStoryArgs = {
+  label: string;
+  variant: "primary" | "secondary" | "ghost" | "danger";
+  disabled: boolean;
 };

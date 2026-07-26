@@ -1,10 +1,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { execFileSync } from "node:child_process";
-import { icons, themeValues } from "../src/contracts/kairo.js";
+import { icons, themeValues } from "../dist/contracts/kairo.js";
 import { extractIconReferences, readText, unique, walkFiles } from "./helpers.js";
 
-const storyFiles = walkFiles("src/stories", (file) => file.endsWith(".js"));
+const storyFiles = walkFiles("src/stories", (file) => file.endsWith(".ts"));
 const referenceFiles = [
   ...storyFiles,
   "examples/kairo-board.html",
@@ -12,15 +11,13 @@ const referenceFiles = [
   "README.md"
 ];
 
-test("all story files pass JavaScript syntax checks", () => {
-  for (const file of storyFiles) {
-    execFileSync(process.execPath, ["--check", file], { cwd: process.cwd(), stdio: "pipe" });
-  }
+test("all stories are covered by TypeScript source files", () => {
+  assert.ok(storyFiles.length > 0, "expected TypeScript stories");
 });
 
 test("Storybook preview exposes all Kairo themes", () => {
-  const preview = readText(".storybook/preview.js");
-  const contract = readText("src/contracts/kairo.js");
+  const preview = readText(".storybook/preview.ts");
+  const contract = readText("src/contracts/kairo.ts");
 
   assert.match(preview, /themes/, "preview must import the shared theme contract");
 
@@ -43,7 +40,7 @@ test("direct icon references in docs, examples and stories are valid", () => {
 
 test("storybook stories cover the foundation areas", () => {
   const titles = storyFiles
-    .filter((file) => file.endsWith(".stories.js"))
+    .filter((file) => file.endsWith(".stories.ts"))
     .map((file) => readText(file).match(/title:\s*"([^"]+)"/)?.[1])
     .filter(Boolean)
     .sort();

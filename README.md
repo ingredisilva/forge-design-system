@@ -35,7 +35,7 @@ Users should feel that they are using a reliable, fast, beautiful tool with subt
 - [.storybook](.storybook): Storybook configuration for documenting and testing the library.
 - [docs/atomic-design.md](docs/atomic-design.md): organization by foundations, atoms, molecules, and organisms.
 - [docs/concept.md](docs/concept.md): concept, visual language, usage rules, and component direction.
-- [docs/design-options.md](docs/design-options.md): official visual presets, including `systems-84` from the ingrd portfolio.
+- [docs/design-options.md](docs/design-options.md): official visual presets, including `systems-84` and `cyberpunk-1984`.
 - [docs/icons.md](docs/icons.md): icon direction, sizes, names, and usage rules.
 - [docs/motion.md](docs/motion.md): animation principles, durations, easing, and reusable patterns.
 - [docs/publishing.md](docs/publishing.md): production publishing checklist for npm, releases, and Storybook Pages.
@@ -44,11 +44,11 @@ Users should feel that they are using a reliable, fast, beautiful tool with subt
 - [docs/testing.md](docs/testing.md): test strategy for tokens, CSS, icons, stories, and builds.
 - [tokens/kairo-88.tokens.json](tokens/kairo-88.tokens.json): initial semantic tokens in JSON.
 - [tokens/kairo-88.themes.json](tokens/kairo-88.themes.json): semantic themes used to generate CSS.
-- [src/contracts/kairo.js](src/contracts/kairo.js): shared contract for themes, icons, and Storybook ordering.
+- [src/contracts/kairo.ts](src/contracts/kairo.ts): typed source contract for themes, icons, and Storybook ordering.
 - [src/styles/kairo.css](src/styles/kairo.css): public CSS entrypoint, organized with Atomic Design.
 - [src/icons/kairo-icons.svg](src/icons/kairo-icons.svg): initial SVG sprite with functional icons.
 - [src/stories](src/stories): stories for concept, tokens, components, icons, and motion.
-- [scripts/generate-css-tokens.js](scripts/generate-css-tokens.js): generates `src/styles/foundations/tokens.css`.
+- [scripts/generate-css-tokens.ts](scripts/generate-css-tokens.ts): generates `src/styles/foundations/tokens.css`.
 - [examples/kairo-board.html](examples/kairo-board.html): static showcase of the concept with switchable themes.
 
 ## Storybook
@@ -57,11 +57,23 @@ Install dependencies and run:
 
 ```bash
 npm install
-npm run build:tokens
+npm run build
 npm run storybook
 ```
 
-Storybook runs at `http://localhost:6006` and includes a theme selector for `midnight`, `systems-84`, `daylight`, `arcade`, and `paper`.
+Storybook runs at `http://localhost:6006` and includes a theme selector for `midnight`, `systems-84`, `cyberpunk-1984`, `daylight`, `arcade`, and `paper`.
+
+## Component Gallery
+
+These previews are rendered from the Storybook stories with the `kairo-midnight` theme.
+
+| Buttons | Form fields and badges |
+| --- | --- |
+| ![Kairo 88 button variants](docs/images/components/buttons.png) | ![Kairo 88 form field and status badge components](docs/images/components/forms.png) |
+
+| Panel | Data table |
+| --- | --- |
+| ![Kairo 88 signal readout panel](docs/images/components/panel.png) | ![Kairo 88 event queue data table](docs/images/components/data-table.png) |
 
 ## Tests
 
@@ -70,7 +82,7 @@ npm test
 npm run test:ci
 ```
 
-`npm test` validates tokens, CSS, icons, and stories with Node's native test runner. `npm run test:ci` runs the suite and also builds Storybook.
+`npm test` validates TypeScript, tokens, CSS, icons, and stories with Node's native test runner. `npm run test:ci` runs the suite and also builds Storybook.
 
 ## Intended Usage
 
@@ -90,8 +102,12 @@ Consumer projects should import the CSS tokens and set a theme attribute on the 
 <html data-theme="systems-84">
 ```
 
+```html
+<html data-theme="cyberpunk-1984">
+```
+
 ```css
 @import "@alloysforge/kairo-88/styles";
 ```
 
-The final package should expose tokens, base CSS, and components through adapters without forcing every project to use the same framework.
+The package exposes a typed contract, tokens, base CSS, and components through adapters without forcing every project to use the same framework.

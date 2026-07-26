@@ -1,4 +1,4 @@
-import { icon, icons, renderStory, storyHeader } from "../shared/story-utils.js";
+import { icon, icons, renderStory, storyHeader } from "../shared/story-utils";
 
 export default {
   title: "Kairo 88/Atoms/Icons",
@@ -15,7 +15,7 @@ export const Sprite = {
           .map(
             (name) => `
               <div class="sb-k88-icon-tile">
-                ${icon(name, null)}
+                ${icon(name, "")}
                 <span>${name}</span>
               </div>
             `
@@ -33,7 +33,7 @@ export const Sizes = {
       <div class="sb-k88-row" style="margin-top: var(--k88-space-8)">
         <div class="sb-k88-icon-tile">${icon("spark", "xs")}<span>xs / 16</span></div>
         <div class="sb-k88-icon-tile">${icon("spark", "sm")}<span>sm / 20</span></div>
-        <div class="sb-k88-icon-tile">${icon("spark", null)}<span>md / 24</span></div>
+        <div class="sb-k88-icon-tile">${icon("spark", "")}<span>md / 24</span></div>
         <div class="sb-k88-icon-tile">${icon("spark", "lg")}<span>lg / 32</span></div>
         <button class="k88-icon-button" type="button" aria-label="Synchronize">
           ${icon("sync", "sm")}
