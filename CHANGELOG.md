@@ -6,6 +6,8 @@ This project follows semantic versioning once published.
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-07-26
+
 ### Added
 
 - `cyberpunk-1984` theme with an original Japanese 80s analog intelligence and techno-thriller direction.
@@ -13,9 +15,12 @@ This project follows semantic versioning once published.
 - Semantic `overlay`, `controlBorder`, `accentText`, and `dangerText` theme tokens.
 - Storybook background matrix and production usage guidance.
 - Forced-colors support for controls, focus indicators, and status labels.
+- TypeScript theme and icon contracts with compiled package exports and declarations.
+- Component previews in the README and a production-readiness roadmap.
 
 ### Changed
 
+- Storybook configuration, stories, token generation, and public contracts now use TypeScript.
 - Inputs now use a functional control boundary while legacy divider borders remain available.
 - Selection and danger buttons now use dedicated semantic text colors.
 - Scanline animation is removed when reduced motion is requested.
