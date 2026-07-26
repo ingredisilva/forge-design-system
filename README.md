@@ -63,6 +63,18 @@ npm run storybook
 
 Storybook runs at `http://localhost:6006` and includes a theme selector for `midnight`, `systems-84`, `daylight`, `arcade`, and `paper`.
 
+## Component Gallery
+
+These previews are rendered from the Storybook stories with the `kairo-midnight` theme.
+
+| Buttons | Form fields and badges |
+| --- | --- |
+| ![Kairo 88 button variants](docs/images/components/buttons.png) | ![Kairo 88 form field and status badge components](docs/images/components/forms.png) |
+
+| Panel | Data table |
+| --- | --- |
+| ![Kairo 88 signal readout panel](docs/images/components/panel.png) | ![Kairo 88 event queue data table](docs/images/components/data-table.png) |
+
 ## Tests
 
 ```bash
