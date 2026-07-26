@@ -1,0 +1,25 @@
+@media (forced-colors: active) {
+  :focus-visible {
+    box-shadow: none;
+    outline: 2px solid Highlight;
+  }
+
+  .k88-button,
+  .k88-input {
+    border-color: ButtonText;
+    forced-color-adjust: auto;
+  }
+
+  .k88-badge,
+  .k88-system-label,
+  .k88-clearance-label {
+    border-color: CanvasText;
+    color: CanvasText;
+    forced-color-adjust: auto;
+  }
+
+  .k88-status-dot {
+    background: CanvasText;
+    forced-color-adjust: auto;
+  }
+}

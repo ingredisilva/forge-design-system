@@ -27,6 +27,7 @@ Work is ordered by user risk and dependency. Accessibility and visual reliabilit
 ## Milestone 0.1.1: Background Reliability
 
 Priority: P0
+Status: In progress
 
 Outcome: every solid background, textured surface, control boundary, and reduced-motion state is safe for production.
 

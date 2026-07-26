@@ -12,17 +12,21 @@ const cssVarNames = {
     bg: "color-bg",
     surface: "color-surface",
     surfaceRaised: "color-surface-raised",
+    overlay: "color-overlay",
     text: "color-text",
     textMuted: "color-text-muted",
     border: "color-border",
     borderStrong: "color-border-strong",
+    controlBorder: "color-control-border",
     primary: "color-primary",
     primaryText: "color-primary-text",
     accent: "color-accent",
+    accentText: "color-accent-text",
     info: "color-info",
     success: "color-success",
     warning: "color-warning",
-    danger: "color-danger"
+    danger: "color-danger",
+    dangerText: "color-danger-text"
   },
   effects: {
     shadowSm: "shadow-sm",

@@ -1,6 +1,6 @@
 .k88-input {
   background: var(--k88-color-surface);
-  border: 1px solid var(--k88-color-border);
+  border: 1px solid var(--k88-color-control-border, var(--k88-color-border-strong));
   border-radius: var(--k88-radius-sm);
   color: var(--k88-color-text);
   font: 400 14px/1.4 var(--k88-font-ui);

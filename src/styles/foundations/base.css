@@ -23,7 +23,7 @@ body {
 
 ::selection {
   background: var(--k88-color-accent);
-  color: var(--k88-color-primary-text);
+  color: var(--k88-color-accent-text, var(--k88-color-primary-text));
 }
 
 .k88-surface {

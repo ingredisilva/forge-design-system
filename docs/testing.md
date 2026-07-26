@@ -28,10 +28,14 @@ The test scripts run `npm run build:tokens` before the suite to ensure generated
 - all themes expose the semantic color variables;
 - the CSS bundle is read by resolving imports through Atomic Design;
 - `src/styles/foundations/tokens.css` is synchronized with token files;
-- primary contrast pairs pass AA;
+- normal and muted text pass AA on page, surface, and raised backgrounds;
+- primary, accent, and danger filled actions pass AA;
+- functional control boundaries reach `3:1` against adjacent surfaces;
 - base component classes exist;
 - motion classes exist;
-- `prefers-reduced-motion` is present;
+- scanline and sweep overlays stop under `prefers-reduced-motion`;
+- forced colors preserve focus, control boundaries, and status labels;
+- texture utilities preserve a solid surface fallback;
 - base CSS avoids negative letter spacing and viewport-scaled type.
 
 ### Icons
@@ -43,7 +47,7 @@ The test scripts run `npm run build:tokens` before the suite to ensure generated
 
 ### Stories
 
-- JavaScript files pass syntax checks;
+- TypeScript stories pass type checks;
 - preview exposes all themes;
 - the main Storybook areas remain covered: foundations, atoms, molecules, organisms, and motion.
 

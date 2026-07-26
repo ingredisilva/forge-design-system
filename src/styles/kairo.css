@@ -11,3 +11,4 @@
 @import "./molecules/panel.css";
 @import "./organisms/table.css";
 @import "./motion/animations.css";
+@import "./foundations/accessibility.css";
