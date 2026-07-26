@@ -1,11 +1,20 @@
-import { badge, icon, renderStory, storyHeader } from "../shared/story-utils.js";
+import { badge, icon, renderStory, storyHeader, type KairoIcon } from "../shared/story-utils";
 
 export default {
   title: "Kairo 88/Foundations/Design Options",
   tags: ["autodocs"]
 };
 
-function designOption({ theme, label, title, lede, meta, primaryIcon }) {
+type DesignOption = {
+  theme: string;
+  label: string;
+  title: string;
+  lede: string;
+  meta: string;
+  primaryIcon: KairoIcon;
+};
+
+function designOption({ theme, label, title, lede, meta, primaryIcon }: DesignOption): string {
   return `
     <section data-theme="${theme}" class="k88-panel k88-scanline" style="background: var(--k88-color-surface); overflow: hidden">
       <div class="k88-technical-grid" style="padding: var(--k88-space-5)">

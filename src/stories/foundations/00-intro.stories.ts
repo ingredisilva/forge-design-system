@@ -1,4 +1,4 @@
-import { badge, icon, panel, renderStory, storyHeader } from "../shared/story-utils.js";
+import { badge, icon, panel, renderStory, storyHeader } from "../shared/story-utils";
 
 export default {
   title: "Kairo 88/Foundations/Introduction",

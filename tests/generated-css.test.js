@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { buildTokensCss } from "../scripts/generate-css-tokens.js";
+import { buildTokensCss } from "../dist/scripts/generate-css-tokens.js";
 import { readJson, readText } from "./helpers.js";
 
 test("generated CSS token file is in sync with token sources", () => {
@@ -11,4 +11,3 @@ test("generated CSS token file is in sync with token sources", () => {
 
   assert.equal(actual, expected);
 });
-

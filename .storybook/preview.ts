@@ -1,6 +1,13 @@
 import "../src/styles/kairo.css";
 import "./storybook-theme.css";
-import { themes } from "../src/contracts/kairo.js";
+import { themes } from "../src/contracts/kairo";
+
+type StoryRender = () => Node | string;
+type StoryContext = {
+  globals: {
+    theme?: string;
+  };
+};
 
 export const globalTypes = {
   theme: {
@@ -16,7 +23,7 @@ export const globalTypes = {
 };
 
 export const decorators = [
-  (Story, context) => {
+  (Story: StoryRender, context: StoryContext): HTMLDivElement => {
     const root = document.createElement("div");
     const story = Story();
 

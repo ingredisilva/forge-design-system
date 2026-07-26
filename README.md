@@ -44,11 +44,11 @@ Users should feel that they are using a reliable, fast, beautiful tool with subt
 - [docs/testing.md](docs/testing.md): test strategy for tokens, CSS, icons, stories, and builds.
 - [tokens/kairo-88.tokens.json](tokens/kairo-88.tokens.json): initial semantic tokens in JSON.
 - [tokens/kairo-88.themes.json](tokens/kairo-88.themes.json): semantic themes used to generate CSS.
-- [src/contracts/kairo.js](src/contracts/kairo.js): shared contract for themes, icons, and Storybook ordering.
+- [src/contracts/kairo.ts](src/contracts/kairo.ts): typed source contract for themes, icons, and Storybook ordering.
 - [src/styles/kairo.css](src/styles/kairo.css): public CSS entrypoint, organized with Atomic Design.
 - [src/icons/kairo-icons.svg](src/icons/kairo-icons.svg): initial SVG sprite with functional icons.
 - [src/stories](src/stories): stories for concept, tokens, components, icons, and motion.
-- [scripts/generate-css-tokens.js](scripts/generate-css-tokens.js): generates `src/styles/foundations/tokens.css`.
+- [scripts/generate-css-tokens.ts](scripts/generate-css-tokens.ts): generates `src/styles/foundations/tokens.css`.
 - [examples/kairo-board.html](examples/kairo-board.html): static showcase of the concept with switchable themes.
 
 ## Storybook
@@ -57,7 +57,7 @@ Install dependencies and run:
 
 ```bash
 npm install
-npm run build:tokens
+npm run build
 npm run storybook
 ```
 
@@ -70,7 +70,7 @@ npm test
 npm run test:ci
 ```
 
-`npm test` validates tokens, CSS, icons, and stories with Node's native test runner. `npm run test:ci` runs the suite and also builds Storybook.
+`npm test` validates TypeScript, tokens, CSS, icons, and stories with Node's native test runner. `npm run test:ci` runs the suite and also builds Storybook.
 
 ## Intended Usage
 
@@ -94,4 +94,4 @@ Consumer projects should import the CSS tokens and set a theme attribute on the 
 @import "@alloysforge/kairo-88/styles";
 ```
 
-The final package should expose tokens, base CSS, and components through adapters without forcing every project to use the same framework.
+The package exposes a typed contract, tokens, base CSS, and components through adapters without forcing every project to use the same framework.

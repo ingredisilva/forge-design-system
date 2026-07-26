@@ -1,15 +1,19 @@
-import { icons } from "../../contracts/kairo.js";
+import { icons, type KairoIcon } from "../../contracts/kairo";
 
 export { icons };
+export type { KairoIcon };
 
-export function renderStory(markup, className = "") {
+export type IconSize = "xs" | "sm" | "md" | "lg" | "";
+export type BadgeTone = "info" | "success" | "warning" | "danger";
+
+export function renderStory(markup: string, className = ""): HTMLDivElement {
   const element = document.createElement("div");
   element.className = ["sb-k88-frame", className].filter(Boolean).join(" ");
   element.innerHTML = markup;
   return element;
 }
 
-export function icon(name, size = "sm", className = "") {
+export function icon(name: KairoIcon, size: IconSize = "sm", className = ""): string {
   const sizeAttr = size ? ` data-size="${size}"` : "";
   const classAttr = ["k88-icon", className].filter(Boolean).join(" ");
 
@@ -20,7 +24,7 @@ export function icon(name, size = "sm", className = "") {
   `;
 }
 
-export function storyHeader(eyebrow, title, lede) {
+export function storyHeader(eyebrow: string, title: string, lede: string): string {
   return `
     <div class="sb-k88-eyebrow">${eyebrow}</div>
     <h1 class="sb-k88-title">${title}</h1>
@@ -28,7 +32,7 @@ export function storyHeader(eyebrow, title, lede) {
   `;
 }
 
-export function panel(title, meta, body, iconName = "dashboard") {
+export function panel(title: string, meta: string, body: string, iconName: KairoIcon = "dashboard"): string {
   return `
     <article class="k88-panel">
       <div class="k88-panel__header">
@@ -40,7 +44,7 @@ export function panel(title, meta, body, iconName = "dashboard") {
   `;
 }
 
-export function badge(tone, label, iconName = "check") {
+export function badge(tone: BadgeTone, label: string, iconName: KairoIcon = "check"): string {
   return `
     <span class="k88-badge" data-tone="${tone}">
       ${icon(iconName, "xs")}
@@ -48,4 +52,3 @@ export function badge(tone, label, iconName = "check") {
     </span>
   `;
 }
-

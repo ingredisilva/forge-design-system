@@ -21,10 +21,17 @@
     "japanese-80s",
     "ui"
   ],
+  "types": "./dist/contracts/kairo.d.ts",
   "style": "./src/styles/kairo.css",
   "exports": {
-    ".": "./src/contracts/kairo.js",
-    "./contract": "./src/contracts/kairo.js",
+    ".": {
+      "types": "./dist/contracts/kairo.d.ts",
+      "import": "./dist/contracts/kairo.js"
+    },
+    "./contract": {
+      "types": "./dist/contracts/kairo.d.ts",
+      "import": "./dist/contracts/kairo.js"
+    },
     "./styles": "./src/styles/kairo.css",
     "./icons": "./src/icons/kairo-icons.svg",
     "./tokens": "./tokens/kairo-88.tokens.json",
@@ -32,7 +39,7 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "src/contracts",
+    "dist/contracts",
     "src/icons",
     "src/styles",
     "tokens",
@@ -51,27 +58,33 @@
     "access": "public"
   },
   "scripts": {
-    "build": "npm run build:tokens",
-    "build:tokens": "node scripts/generate-css-tokens.js",
-    "prestorybook": "npm run build:tokens",
+    "build": "npm run build:types && npm run build:tokens",
+    "build:ts": "npm run build:types && npm run build:scripts",
+    "build:types": "tsc -p tsconfig.build.json",
+    "build:scripts": "tsc -p tsconfig.scripts.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build:tokens": "npm run build:scripts && node dist/scripts/generate-css-tokens.js",
+    "prestorybook": "npm run build",
     "storybook": "storybook dev -p 6006 --no-open --disable-telemetry --ci",
-    "prebuild-storybook": "npm run build:tokens",
+    "prebuild-storybook": "npm run build",
     "build-storybook": "storybook build --disable-telemetry",
     "check:tokens": "node -e \"JSON.parse(require('node:fs').readFileSync('tokens/kairo-88.tokens.json','utf8')); console.log('tokens-json-ok')\"",
-    "pretest": "npm run build:tokens",
-    "test": "node --test \"tests/*.test.js\"",
-    "pretest:storybook": "npm run build:tokens",
+    "pretest": "npm run build",
+    "test": "npm run typecheck && node --test \"tests/*.test.js\"",
+    "pretest:storybook": "npm run build",
     "test:storybook": "storybook build --test --disable-telemetry",
     "test:ci": "npm run test && npm run build-storybook",
     "pack:dry-run": "npm pack --dry-run",
     "publish:dry-run": "npm publish --dry-run --access public",
-    "prepack": "npm run build:tokens",
+    "prepack": "npm run build",
     "prepublishOnly": "npm run test:ci"
   },
   "devDependencies": {
     "@storybook/addon-docs": "^10.4.0",
     "@storybook/web-components-vite": "^10.4.0",
+    "@types/node": "^22.20.1",
     "storybook": "^10.4.0",
+    "typescript": "^7.0.2",
     "vite": "^7.0.0"
   }
 }

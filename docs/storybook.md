@@ -24,11 +24,11 @@ npm test
 
 ## Organization
 
-- `.storybook/main.js`: registers stories, addon docs, framework, and icon sprite.
-- `.storybook/preview.js`: imports global CSS and adds the theme selector.
+- `.storybook/main.ts`: registers stories, addon docs, framework, and icon sprite.
+- `.storybook/preview.ts`: imports global CSS and adds the theme selector.
 - `.storybook/storybook-theme.css`: presentation-only styles for stories.
 - `src/stories/foundations`: concept, tokens, scales, and themes.
-- `src/stories/foundations/design-options.stories.js`: comparison between Kairo 88 and `systems-84`.
+- `src/stories/foundations/design-options.stories.ts`: comparison between Kairo 88 and `systems-84`.
 - `src/stories/atoms`: buttons, fields, badges, and icons.
 - `src/stories/molecules`: small compositions, such as panel.
 - `src/stories/organisms`: composed sections, such as table.

@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { themes, themeValues } from "../src/contracts/kairo.js";
+import { themes, themeValues } from "../dist/contracts/kairo.js";
 import { readJson } from "./helpers.js";
 
 const themeConfig = readJson("tokens/kairo-88.themes.json");

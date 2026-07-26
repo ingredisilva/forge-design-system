@@ -22,7 +22,7 @@ Main files:
 - `tokens/kairo-88.tokens.json`;
 - `tokens/kairo-88.themes.json`;
 - `src/styles/foundations`;
-- `src/contracts/kairo.js`.
+- `src/contracts/kairo.ts`.
 
 ### Atoms
 

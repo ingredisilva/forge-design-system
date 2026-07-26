@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { themeValues } from "../src/contracts/kairo.js";
+import { themeValues } from "../dist/contracts/kairo.js";
 import { readCssBundle } from "./helpers.js";
 
 const css = readCssBundle("src/styles/kairo.css");
