@@ -74,6 +74,30 @@
         "glowFocus": "0 0 0 3px rgb(214 168 79 / 28%)"
       }
     },
+    "cyberpunk-1984": {
+      "colorScheme": "dark",
+      "colors": {
+        "bg": "#090c0a",
+        "surface": "#141915",
+        "surfaceRaised": "#1b231d",
+        "text": "#e5e1cf",
+        "textMuted": "#98a28f",
+        "border": "#344137",
+        "borderStrong": "#697769",
+        "primary": "#c6d86b",
+        "primaryText": "#11150c",
+        "accent": "#e04b32",
+        "info": "#77a9a0",
+        "success": "#93bd77",
+        "warning": "#e0a84f",
+        "danger": "#f05a47"
+      },
+      "effects": {
+        "shadowSm": "0 2px 0 rgb(0 0 0 / 38%)",
+        "shadowMd": "0 14px 34px rgb(0 0 0 / 42%)",
+        "glowFocus": "0 0 0 3px rgb(198 216 107 / 30%)"
+      }
+    },
     "kairo-arcade": {
       "colorScheme": "dark",
       "colors": {

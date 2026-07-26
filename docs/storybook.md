@@ -7,7 +7,7 @@ Storybook is the official Kairo 88 workbench. It should document visual decision
 - Storybook 10;
 - Web Components with Vite;
 - CSS and tokens as the source of truth;
-- stories in plain JavaScript, rendering DOM/HTML;
+- stories in TypeScript, rendering DOM/HTML;
 - Atomic Design organization.
 
 This keeps the design system independent from React, Vue, or any product framework. Adapters can come later.
@@ -28,7 +28,7 @@ npm test
 - `.storybook/preview.ts`: imports global CSS and adds the theme selector.
 - `.storybook/storybook-theme.css`: presentation-only styles for stories.
 - `src/stories/foundations`: concept, tokens, scales, and themes.
-- `src/stories/foundations/design-options.stories.ts`: comparison between Kairo 88 and `systems-84`.
+- `src/stories/foundations/design-options.stories.ts`: comparison between Kairo 88, `systems-84`, and `cyberpunk-1984`.
 - `src/stories/atoms`: buttons, fields, badges, and icons.
 - `src/stories/molecules`: small compositions, such as panel.
 - `src/stories/organisms`: composed sections, such as table.

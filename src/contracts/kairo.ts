@@ -1,6 +1,7 @@
 export const themes = [
   { value: "kairo-midnight", title: "Midnight" },
   { value: "systems-84", title: "Systems 84" },
+  { value: "cyberpunk-1984", title: "Cyberpunk 1984" },
   { value: "kairo-daylight", title: "Daylight" },
   { value: "kairo-arcade", title: "Arcade" },
   { value: "kairo-paper", title: "Paper" }

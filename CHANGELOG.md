@@ -4,6 +4,13 @@ All notable changes to Kairo 88 will be documented in this file.
 
 This project follows semantic versioning once published.
 
+## [Unreleased]
+
+### Added
+
+- `cyberpunk-1984` theme with an original Japanese 80s analog intelligence and techno-thriller direction.
+- Intelligence grid, signal noise, and clearance label visual primitives.
+
 ## [0.1.0] - 2026-07-09
 
 ### Added
