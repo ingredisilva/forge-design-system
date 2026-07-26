@@ -6,6 +6,17 @@ This project follows semantic versioning once published.
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-07-26
+
+### Added
+
+- `neko-mirai-84`, an optimistic Japanese 1984 theme with warm paper, morning sky, ume pink, tea green, and a companion-led product tone.
+- `companion` icon, companion status label, and breeze-grid visual primitive for purposeful guide, pet, route, and ambient-status surfaces.
+
+### Fixed
+
+- Theme comparison stories now isolate inherited text colors when dark and light presets are rendered together.
+
 ## [0.2.0] - 2026-07-26
 
 ### Added

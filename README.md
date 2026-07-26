@@ -36,7 +36,7 @@ Users should feel that they are using a reliable, fast, beautiful tool with subt
 - [docs/atomic-design.md](docs/atomic-design.md): organization by foundations, atoms, molecules, and organisms.
 - [docs/backgrounds.md](docs/backgrounds.md): semantic background roles, texture rules, and accessibility requirements.
 - [docs/concept.md](docs/concept.md): concept, visual language, usage rules, and component direction.
-- [docs/design-options.md](docs/design-options.md): official visual presets, including `systems-84` and `cyberpunk-1984`.
+- [docs/design-options.md](docs/design-options.md): official visual presets, including `systems-84`, `cyberpunk-1984`, and `neko-mirai-84`.
 - [docs/icons.md](docs/icons.md): icon direction, sizes, names, and usage rules.
 - [docs/motion.md](docs/motion.md): animation principles, durations, easing, and reusable patterns.
 - [docs/publishing.md](docs/publishing.md): production publishing checklist for npm, releases, and Storybook Pages.
@@ -62,7 +62,7 @@ npm run build
 npm run storybook
 ```
 
-Storybook runs at `http://localhost:6006` and includes a theme selector for `midnight`, `systems-84`, `cyberpunk-1984`, `daylight`, `arcade`, and `paper`.
+Storybook runs at `http://localhost:6006` and includes a theme selector for `midnight`, `systems-84`, `cyberpunk-1984`, `neko-mirai-84`, `daylight`, `arcade`, and `paper`.
 
 ## Component Gallery
 
@@ -105,6 +105,10 @@ Consumer projects should import the CSS tokens and set a theme attribute on the 
 
 ```html
 <html data-theme="cyberpunk-1984">
+```
+
+```html
+<html data-theme="neko-mirai-84">
 ```
 
 ```css

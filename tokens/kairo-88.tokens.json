@@ -24,7 +24,11 @@
       "technicalGreen": { "$type": "color", "$value": "#9FB7A5" },
       "blueprint": { "$type": "color", "$value": "#7AA2C7" },
       "systemAmber": { "$type": "color", "$value": "#D6A84F" },
-      "alertRed": { "$type": "color", "$value": "#E84A4A" }
+      "alertRed": { "$type": "color", "$value": "#E84A4A" },
+      "morningSky": { "$type": "color", "$value": "#3C718B" },
+      "teaGreen": { "$type": "color", "$value": "#437356" },
+      "umePink": { "$type": "color", "$value": "#B94E73" },
+      "washiCream": { "$type": "color", "$value": "#F3EADB" }
     },
     "semantic": {
       "info": { "$type": "color", "$value": "{color.accent.neonCyan}" },

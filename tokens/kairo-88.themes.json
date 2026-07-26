@@ -114,6 +114,34 @@
         "glowFocus": "0 0 0 3px rgb(198 216 107 / 30%)"
       }
     },
+    "neko-mirai-84": {
+      "colorScheme": "light",
+      "colors": {
+        "bg": "#f3eadb",
+        "surface": "#fffaf0",
+        "surfaceRaised": "#ffffff",
+        "overlay": "#24343b",
+        "text": "#24343b",
+        "textMuted": "#59666a",
+        "border": "#c8b9ab",
+        "borderStrong": "#81746b",
+        "controlBorder": "#81746b",
+        "primary": "#287a78",
+        "primaryText": "#ffffff",
+        "accent": "#b94e73",
+        "accentText": "#ffffff",
+        "info": "#3c718b",
+        "success": "#437356",
+        "warning": "#8a5b00",
+        "danger": "#b74345",
+        "dangerText": "#ffffff"
+      },
+      "effects": {
+        "shadowSm": "0 2px 0 rgb(75 60 48 / 10%)",
+        "shadowMd": "0 14px 32px rgb(75 60 48 / 14%)",
+        "glowFocus": "0 0 0 3px rgb(40 122 120 / 24%)"
+      }
+    },
     "kairo-arcade": {
       "colorScheme": "dark",
       "colors": {

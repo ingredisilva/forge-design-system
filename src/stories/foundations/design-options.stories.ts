@@ -16,7 +16,7 @@ type DesignOption = {
 
 function designOption({ theme, label, title, lede, meta, primaryIcon }: DesignOption): string {
   return `
-    <section data-theme="${theme}" class="k88-panel k88-scanline" style="background: var(--k88-color-surface); overflow: hidden">
+    <section data-theme="${theme}" class="k88-panel k88-scanline" style="background: var(--k88-color-surface); color: var(--k88-color-text); overflow: hidden">
       <div class="k88-technical-grid" style="padding: var(--k88-space-5)">
         <div class="sb-k88-row" style="justify-content: space-between">
           <span class="k88-system-label">${label}</span>
@@ -43,7 +43,7 @@ export const Presets = {
       ${storyHeader(
         "Foundations",
         "Design Options",
-        "The library has three visual directions: Kairo 88 as the Japanese 80s product base, Systems 84 as the technical ingrd preset, and Cyberpunk 1984 as an analog intelligence techno-thriller."
+        "The library has four visual directions: the Japanese 80s Kairo base, technical Systems 84, tense Cyberpunk 1984, and the gentle, companion-led future of Neko Mirai 84."
       )}
 
       <div class="sb-k88-grid" style="margin-top: var(--k88-space-8)">
@@ -73,9 +73,18 @@ export const Presets = {
           meta: "CLEARANCE_04",
           primaryIcon: "system-map"
         })}
+
+        ${designOption({
+          theme: "neko-mirai-84",
+          label: "NEKO_MIRAI_84",
+          title: "A gentle future with precise controls",
+          lede: "Warm paper, morning sky, ume pink, tea green, domestic electronics, wind, travel, and a feline companion spirit. Optimistic without becoming childish.",
+          meta: "COMPANION_ON",
+          primaryIcon: "companion"
+        })}
       </div>
 
-      <div class="k88-panel" data-theme="systems-84" style="margin-top: var(--k88-space-8); overflow: hidden">
+      <div class="k88-panel" data-theme="systems-84" style="color: var(--k88-color-text); margin-top: var(--k88-space-8); overflow: hidden">
         <div class="k88-panel__header">
           <div class="k88-panel__title">${icon("system-map", "xs")}Systems 84 primitives</div>
           <div class="k88-panel__meta">FROM INGRD PORTFOLIO</div>
@@ -95,7 +104,7 @@ export const Presets = {
         </div>
       </div>
 
-      <div class="k88-panel" data-theme="cyberpunk-1984" style="margin-top: var(--k88-space-4); overflow: hidden">
+      <div class="k88-panel" data-theme="cyberpunk-1984" style="color: var(--k88-color-text); margin-top: var(--k88-space-4); overflow: hidden">
         <div class="k88-panel__header">
           <div class="k88-panel__title">${icon("terminal", "xs")}Cyberpunk 1984 primitives</div>
           <div class="k88-panel__meta">ORIGINAL KAIRO INTERPRETATION</div>
@@ -110,6 +119,26 @@ export const Presets = {
             </div>
             <div class="k88-scanline" style="background: var(--k88-color-surface-raised); border: 1px solid var(--k88-color-border); min-height: 150px; padding: var(--k88-space-4)">
               <span class="k88-system-label">ANALOG FEED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="k88-panel" data-theme="neko-mirai-84" style="color: var(--k88-color-text); margin-top: var(--k88-space-4); overflow: hidden">
+        <div class="k88-panel__header">
+          <div class="k88-panel__title">${icon("companion", "xs")}Neko Mirai 84 primitives</div>
+          <div class="k88-panel__meta">GENTLE FUTURE / 1984</div>
+        </div>
+        <div class="k88-panel__body">
+          <div class="sb-k88-grid">
+            <div class="k88-breeze-grid" style="background-color: var(--k88-color-surface-raised); border: 1px solid var(--k88-color-border); min-height: 150px; padding: var(--k88-space-4)">
+              <span class="k88-companion-label">COMPANION ONLINE</span>
+            </div>
+            <div class="k88-technical-grid" style="background-color: var(--k88-color-surface); border: 1px solid var(--k88-color-border); min-height: 150px; padding: var(--k88-space-4)">
+              <span class="k88-system-label">MORNING ROUTE</span>
+            </div>
+            <div style="align-content: end; background: linear-gradient(155deg, var(--k88-color-surface-raised), color-mix(in srgb, var(--k88-color-accent), transparent 82%)); border: 1px solid var(--k88-color-border); display: grid; min-height: 150px; padding: var(--k88-space-4)">
+              <span style="color: var(--k88-color-text-muted); font: 500 12px/1.6 var(--k88-font-ui)">Technology feels cared for, inhabited, and ready to help.</span>
             </div>
           </div>
         </div>

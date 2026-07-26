@@ -43,6 +43,10 @@ Use for diagrams, system maps, coordinates, and technical previews. Avoid behind
 
 Use for evidence maps, surveillance views, classified metadata, and the `cyberpunk-1984` direction.
 
+### `.k88-breeze-grid`
+
+Use for welcome regions, routes, companion status, gentle progress, and the `neko-mirai-84` direction. It keeps the Kairo grid but adds a restrained dot rhythm and diagonal wind trace.
+
 ### `.k88-signal-noise`
 
 Use for analog feeds, signal diagnostics, and short status surfaces. It includes a raised-surface fallback.
@@ -65,6 +69,8 @@ Textures should frame information, not compete with it. Dense copy, inputs, tabl
 ```
 
 Do not combine more than one grid utility on the same element. `k88-signal-noise` and `k88-scanline` may be combined only for a bounded signal readout with short content.
+
+The breeze grid is not a page wallpaper. Pair it with a solid content zone and use companion motifs only when the surface has an actual guide, pet, helper, route, or ambient-status function.
 
 ## Overlay Composition
 

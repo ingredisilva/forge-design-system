@@ -10,6 +10,7 @@ const textures = [
   { className: "k88-technical-grid", label: "Technical grid" },
   { className: "k88-blueprint-grid", label: "Blueprint grid" },
   { className: "k88-intelligence-grid", label: "Intelligence grid" },
+  { className: "k88-breeze-grid", label: "Breeze grid" },
   { className: "k88-signal-noise", label: "Signal noise" },
   { className: "k88-scanline", label: "Scanline" }
 ] as const;

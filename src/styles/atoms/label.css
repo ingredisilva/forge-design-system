@@ -39,3 +39,26 @@
   height: 5px;
   width: 5px;
 }
+
+.k88-companion-label {
+  align-items: center;
+  background: color-mix(in srgb, var(--k88-color-primary), transparent 90%);
+  border: 1px solid color-mix(in srgb, var(--k88-color-primary), transparent 45%);
+  border-radius: var(--k88-radius-sm);
+  color: var(--k88-color-primary);
+  display: inline-flex;
+  font: 700 11px/1 var(--k88-font-mono);
+  gap: var(--k88-space-2);
+  min-height: 26px;
+  padding: 0 var(--k88-space-3);
+  text-transform: uppercase;
+}
+
+.k88-companion-label::before {
+  background: currentColor;
+  border-radius: 50%;
+  box-shadow: 4px -3px 0 -1px currentColor;
+  content: "";
+  height: 5px;
+  width: 5px;
+}

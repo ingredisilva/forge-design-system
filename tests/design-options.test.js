@@ -41,3 +41,22 @@ test("cyberpunk-1984 preserves the analog intelligence palette", () => {
   assert.equal(cyberpunk1984.colors.info, "#77a9a0");
   assert.equal(cyberpunk1984.colors.danger, "#f05a47");
 });
+
+test("neko-mirai-84 is exposed as the optimistic companion direction", () => {
+  assert.equal(themes[3].value, "neko-mirai-84");
+  assert.ok(themeValues.includes("neko-mirai-84"), "contract must expose neko-mirai-84");
+  assert.ok(themeConfig.themes["neko-mirai-84"], "theme tokens must define neko-mirai-84");
+});
+
+test("neko-mirai-84 preserves the gentle future palette", () => {
+  const nekoMirai84 = themeConfig.themes["neko-mirai-84"];
+
+  assert.equal(nekoMirai84.colors.bg, "#f3eadb");
+  assert.equal(nekoMirai84.colors.surface, "#fffaf0");
+  assert.equal(nekoMirai84.colors.surfaceRaised, "#ffffff");
+  assert.equal(nekoMirai84.colors.text, "#24343b");
+  assert.equal(nekoMirai84.colors.primary, "#287a78");
+  assert.equal(nekoMirai84.colors.accent, "#b94e73");
+  assert.equal(nekoMirai84.colors.info, "#3c718b");
+  assert.equal(nekoMirai84.colors.success, "#437356");
+});

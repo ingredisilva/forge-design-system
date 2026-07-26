@@ -130,12 +130,14 @@ test("core component and motion classes exist", () => {
     ".k88-badge",
     ".k88-system-label",
     ".k88-clearance-label",
+    ".k88-companion-label",
     ".k88-field",
     ".k88-input",
     ".k88-table",
     ".k88-technical-grid",
     ".k88-blueprint-grid",
     ".k88-intelligence-grid",
+    ".k88-breeze-grid",
     ".k88-signal-noise",
     ".k88-scanline",
     ".k88-animate-in",
@@ -158,7 +160,7 @@ test("motion has reduced-motion safeguards", () => {
 });
 
 test("texture utilities preserve a usable surface fallback", () => {
-  for (const selector of ["technical-grid", "blueprint-grid", "intelligence-grid"]) {
+  for (const selector of ["technical-grid", "blueprint-grid", "intelligence-grid", "breeze-grid"]) {
     assert.match(css, new RegExp(`\\.k88-${selector}\\s*\\{[^}]*background-image:`), `${selector} must compose over a background color`);
   }
 

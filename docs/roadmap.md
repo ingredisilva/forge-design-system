@@ -11,7 +11,7 @@ Work is ordered by user risk and dependency. Accessibility and visual reliabilit
 - [x] Atomic Design CSS structure.
 - [x] Generated semantic theme tokens.
 - [x] TypeScript contracts and Storybook stories.
-- [x] Public themes: `kairo-midnight`, `systems-84`, `cyberpunk-1984`, `kairo-daylight`, `kairo-arcade`, and `kairo-paper`.
+- [x] Public themes: `kairo-midnight`, `systems-84`, `cyberpunk-1984`, `neko-mirai-84`, `kairo-daylight`, `kairo-arcade`, and `kairo-paper`.
 - [x] Buttons, inputs, badges, labels, panels, tables, icons, textures, and motion utilities.
 - [x] Unit tests for tokens, generated CSS, theme contrast, icons, and story coverage.
 - [x] CI, npm release, and Storybook Pages workflows.
@@ -214,7 +214,7 @@ A component or foundation change is complete only when it has:
 - semantic tokens without unexplained visual hard-coding;
 - typed public contracts where applicable;
 - hover, active, focus, disabled, loading, empty, and error states where applicable;
-- dark, light, `systems-84`, and `cyberpunk-1984` coverage;
+- dark, light, `systems-84`, `cyberpunk-1984`, and `neko-mirai-84` coverage;
 - responsive and overflow behavior;
 - keyboard and screen-reader behavior;
 - contrast and reduced-motion validation;

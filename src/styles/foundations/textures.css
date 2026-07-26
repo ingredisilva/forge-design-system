@@ -36,6 +36,29 @@
     128px 128px;
 }
 
+.k88-breeze-grid {
+  background-image:
+    radial-gradient(circle at 18px 18px, color-mix(in srgb, var(--k88-color-info), transparent 82%) 0 2px, transparent 2.5px),
+    linear-gradient(color-mix(in srgb, var(--k88-color-primary), transparent 94%) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--k88-color-primary), transparent 94%) 1px, transparent 1px),
+    linear-gradient(
+      155deg,
+      transparent 0 62%,
+      color-mix(in srgb, var(--k88-color-accent), transparent 91%) 62% 63%,
+      transparent 63% 100%
+    );
+  background-position:
+    0 0,
+    0 0,
+    0 0,
+    0 0;
+  background-size:
+    72px 72px,
+    36px 36px,
+    36px 36px,
+    144px 144px;
+}
+
 .k88-signal-noise {
   background:
     repeating-linear-gradient(

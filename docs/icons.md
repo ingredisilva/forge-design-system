@@ -53,6 +53,7 @@ Use intent-based names, not visual-shape names:
 - `palette`
 - `terminal`
 - `system-map`
+- `companion`
 
 When an adapter uses an external library, map it in one place. Example: `dashboard` can point to `LayoutDashboard` in React without spreading library-specific names through the product.
 
@@ -80,6 +81,7 @@ Informational icons should have accessible text:
 - Do not use gradients inside functional icons.
 - Do not create overly illustrative icons for common actions.
 - Do not use Japanese decorative icons without a clear function.
+- Use `companion` only for a helper, guide, pet, or relationship state; it is not a replacement for generic user or settings icons.
 
 ## States
 

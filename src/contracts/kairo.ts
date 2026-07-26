@@ -2,6 +2,7 @@ export const themes = [
   { value: "kairo-midnight", title: "Midnight" },
   { value: "systems-84", title: "Systems 84" },
   { value: "cyberpunk-1984", title: "Cyberpunk 1984" },
+  { value: "neko-mirai-84", title: "Neko Mirai 84" },
   { value: "kairo-daylight", title: "Daylight" },
   { value: "kairo-arcade", title: "Arcade" },
   { value: "kairo-paper", title: "Paper" }
@@ -26,7 +27,8 @@ export const icons = [
   "sync",
   "palette",
   "terminal",
-  "system-map"
+  "system-map",
+  "companion"
 ] as const;
 
 export type KairoIcon = (typeof icons)[number];

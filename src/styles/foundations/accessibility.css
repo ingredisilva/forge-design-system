@@ -12,7 +12,8 @@
 
   .k88-badge,
   .k88-system-label,
-  .k88-clearance-label {
+  .k88-clearance-label,
+  .k88-companion-label {
     border-color: CanvasText;
     color: CanvasText;
     forced-color-adjust: auto;

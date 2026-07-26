@@ -28,7 +28,7 @@ npm test
 - `.storybook/preview.ts`: imports global CSS and adds the theme selector.
 - `.storybook/storybook-theme.css`: presentation-only styles for stories.
 - `src/stories/foundations`: concept, tokens, scales, and themes.
-- `src/stories/foundations/design-options.stories.ts`: comparison between Kairo 88, `systems-84`, and `cyberpunk-1984`.
+- `src/stories/foundations/design-options.stories.ts`: comparison between Kairo 88, `systems-84`, `cyberpunk-1984`, and `neko-mirai-84`.
 - `src/stories/atoms`: buttons, fields, badges, and icons.
 - `src/stories/molecules`: small compositions, such as panel.
 - `src/stories/organisms`: composed sections, such as table.
